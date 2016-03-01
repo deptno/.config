@@ -151,7 +151,7 @@ if pluginsExist
   set noswapfile
   filetype on
   set relativenumber number
-  set tabstop=2 shiftwidth=2 expandtab
+  set tabstop=4 shiftwidth=4 expandtab
   set conceallevel=0
 " block select not limited by shortest line
   set virtualedit=
@@ -272,7 +272,7 @@ set background=dark
 " no need to fold things in markdown all the time
 let g:vim_markdown_folding_disabled = 1
 " turn on spelling for markdown files
-autocmd BufRead,BufNewFile *.md setlocal spell complete+=kspell
+"autocmd BufRead,BufNewFile *.md setlocal spell complete+=kspell
 " highlight bad words in red
 autocmd BufRead,BufNewFile *.md hi SpellBad guibg=#ff2929 guifg=#ffffff" ctermbg=224
 " disable markdown auto-preview. Gets annoying
