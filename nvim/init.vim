@@ -185,6 +185,8 @@ if pluginsExist
   let g:unite_source_codesearch_command = '$HOME/bin/csearch'
   let g:table_mode_corner="|"
 
+  let g:python_host_prog = '/usr/bin/python'
+  let g:python3_host_prog = '/usr/bin/python3'
 " }}}
 
 " System mappings  ----------------------------------------------------------{{{
