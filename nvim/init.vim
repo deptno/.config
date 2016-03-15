@@ -185,8 +185,8 @@ if pluginsExist
   let g:unite_source_codesearch_command = '$HOME/bin/csearch'
   let g:table_mode_corner="|"
 
-  let g:python_host_prog = '/usr/bin/python'
-  let g:python3_host_prog = '/usr/bin/python3'
+  let g:python_host_prog = '/usr/local/bin/python'
+  let g:python3_host_prog = '/usr/local/bin/python3'
 " }}}
 
 " System mappings  ----------------------------------------------------------{{{
@@ -366,6 +366,7 @@ call NERDTreeHighlightFile('css', 'cyan', 'none', '#5486C0', 'none')
 call NERDTreeHighlightFile('scss', 'cyan', 'none', '#5486C0', 'none')
 call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', 'none')
 call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', 'none')
+call NERDTreeHighlightFile('es6', 'Red', 'none', '#ffa500', 'none')
 call NERDTreeHighlightFile('ts', 'Blue', 'none', '#6699cc', 'none')
 call NERDTreeHighlightFile('ds_store', 'Gray', 'none', '#686868', 'none')
 call NERDTreeHighlightFile('gitconfig', 'black', 'none', '#686868', 'none')
