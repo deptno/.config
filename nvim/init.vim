@@ -555,7 +555,7 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 
   function! neomake#makers#ft#javascript#eslint()
       return {
-          \ 'args': ['-f', 'compact'],
+          \ 'args': ['-f', 'compact', '-c', '~/.config/eslint.json'],
           \ 'errorformat': '%E%f: line %l\, col %c\, Error - %m,' .
           \ '%W%f: line %l\, col %c\, Warning - %m'
           \ }
