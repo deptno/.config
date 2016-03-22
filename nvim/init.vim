@@ -218,7 +218,7 @@ if pluginsExist
   inoremap <c-d> <esc>ddi
   noremap H ^
   noremap L g_
-  noremap J 5j
+  "noremap J 5j
   noremap K 5k
 " this is the best, let me tell you why
 " how annoying is that everytime you want to do something in vim
