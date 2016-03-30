@@ -74,7 +74,7 @@
   NeoBundle 'tomtom/tcomment_vim'
   NeoBundle 'mattn/emmet-vim'
   NeoBundle 'Chiel92/vim-autoformat'
-  " NeoBundle 'gorodinskiy/vim-coloresque'
+  NeoBundle 'gorodinskiy/vim-coloresque'
   NeoBundle 'ap/vim-css-color'
 " Shougo
   NeoBundle 'Shougo/unite.vim'
@@ -82,14 +82,14 @@
   NeoBundle 'ujihisa/unite-colorscheme'
   NeoBundle 'junkblocker/unite-codesearch'
   NeoBundle 'Shougo/vimfiler.vim'
-  " NeoBundle 'Valloric/YouCompleteMe', {
-  "    \ 'build' : {
-  "    \     'mac' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-  "    \     'unix' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-  "    \     'windows' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-  "    \     'cygwin' : './install.sh --clang-completer --system-libclang --omnisharp-completer'
-  "    \    }
-  "    \ }
+  NeoBundle 'Valloric/YouCompleteMe', {
+     \ 'build' : {
+     \     'mac' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
+     \     'unix' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
+     \     'windows' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
+     \     'cygwin' : './install.sh --clang-completer --system-libclang --omnisharp-completer'
+     \    }
+     \ }
   NeoBundle 'Shougo/vimproc.vim', {
         \ 'build' : {
         \     'windows' : 'tools\\update-dll-mingw',
@@ -126,6 +126,8 @@
   NeoBundleLazy 'zchee/deoplete-go',{'autoload':{'filetypes':['go']}}
   NeoBundle 'rhysd/nyaovim-popup-tooltip'
   NeoBundle 'ryanoasis/vim-devicons'
+
+  NeoBundle 'Quramy/vison'
   call neobundle#end()
 
 " Required:
@@ -185,8 +187,13 @@ if pluginsExist
   let g:unite_source_codesearch_command = '$HOME/bin/csearch'
   let g:table_mode_corner="|"
 
-  let g:python_host_prog = '/usr/local/bin/python'
+  " by deptno
+  let g:python_host_prog = '/usr/bin/python2.6'
   let g:python3_host_prog = '/usr/local/bin/python3'
+
+  let g:ycm_path_to_python_interpreter = '/usr/local/bin/python'
+  let g:ycm_python_binary_path = '/usr/local/Cellar/python3/3.5.1'
+
   autocmd BufRead,BufNewFile *.es6 setfiletype javascript
 " }}}
 
@@ -570,4 +577,27 @@ nmap <leader>9 <Plug>AirlineSelectTab9
   command JscsFix :call JscsFix()
   noremap <leader>j :JscsFix<CR>
 "}}}
+
+        autocmd BufRead,BufNewFile package.json Vison
+        autocmd BufRead,BufNewFile tsconfig.json Vison tsconfig.json
+        autocmd BufRead,BufNewFile .bowerrc Vison bowerrc.json
+        autocmd FileType json setlocal completeopt+=menu,preview
+
+        set omnifunc=syntaxcomplete#Complete
+
+        " json
+        function FormatJSON(...) 
+            let code="\"
+                        \ var i = process.stdin, d = '';
+                        \ i.resume();
+                        \ i.setEncoding('utf8');
+                        \ i.on('data', function(data) { d += data; });
+                        \ i.on('end', function() {
+                        \     console.log(JSON.stringify(JSON.parse(d), null, 
+                        \ " . (a:0 ? a:1 ? a:1 : 4 : 4) . "));
+                        \ });\""
+            execute "%! node -e " . code 
+        endfunction
+
+        nmap fj :<C-U>call FormatJSON(v:count)<CR>
 endif
