@@ -593,11 +593,24 @@ nmap <leader>9 <Plug>AirlineSelectTab9
                         \ i.setEncoding('utf8');
                         \ i.on('data', function(data) { d += data; });
                         \ i.on('end', function() {
+                        \ try {
                         \     console.log(JSON.stringify(JSON.parse(d), null, 
                         \ " . (a:0 ? a:1 ? a:1 : 4 : 4) . "));
+                        \ } catch(ex) { console.log(d); }
                         \ });\""
             execute "%! node -e " . code 
         endfunction
 
+        function Deptno(...) 
+            execute '%! node -e "require(\"$HOME/.config/deptno\")[\"' . a:1 . '\"][\"' . a:2 . '\"]()"'
+        endfunction
+
+        function DeptnoEcho(...) 
+            echom system('node -e "require(\"$HOME/.config/deptno\")[\"' . a:1 . '\"][\"' . a:2 . '\"](\"' . a:3 . '\")"')
+        endfunction
+
         nmap fj :<C-U>call FormatJSON(v:count)<CR>
+        nmap ,b :<C-U>call Deptno("format", "json")<CR>
+        nmap ,trk :<C-U>call DeptnoEcho("translate", "en", getline("."))<CR>
+        nmap ,trj :<C-U>call DeptnoEcho("translate", "ja", getline("."))<CR>
 endif
