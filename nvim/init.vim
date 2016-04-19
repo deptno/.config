@@ -202,7 +202,7 @@ if pluginsExist
 " No need for ex mode
   nnoremap Q <nop>
 " recording macros is not my thing
-  map q <Nop>
+  " map q <Nop>
 " exit insert, dd line, enter insert
   inoremap <c-d> <esc>ddi
 " Navigate between display lines
@@ -612,5 +612,6 @@ nmap <leader>9 <Plug>AirlineSelectTab9
         nmap fj :<C-U>call FormatJSON(v:count)<CR>
         nmap ,b :<C-U>call Deptno("format", "json")<CR>
         nmap ,trk :<C-U>call DeptnoEcho("translate", "en", getline("."))<CR>
+        nmap ,tre :<C-U>call DeptnoEcho("translate", "ko", getline("."))<CR>
         nmap ,trj :<C-U>call DeptnoEcho("translate", "ja", getline("."))<CR>
 endif

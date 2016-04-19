@@ -21,6 +21,9 @@ module.exports = {
         ja: function(text) {
             this.tr('ja', text);
         },
+        ko: function(text) {
+            this.tr('ko', text);
+        },
         tr: function(source, text) {
             var https = require('https');
 
@@ -32,7 +35,7 @@ module.exports = {
 
             var data = require('querystring').stringify({
                 source: source,
-                target: 'ko',
+                target: source !== 'ko' ? 'ko' : 'en',
                 text: text
             });
 
