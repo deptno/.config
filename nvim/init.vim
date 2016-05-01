@@ -51,6 +51,7 @@
   NeoBundle 'chriskempson/base16-vim'
   NeoBundle 'Yggdroot/indentLine'
   NeoBundle 'Raimondi/delimitMate'
+  NeoBundle 'notpratheek/vim-luna'
   "NeoBundle 'valloric/MatchTagAlways'
  " Git helpers
   NeoBundle 'tpope/vim-fugitive'
@@ -192,7 +193,7 @@ if pluginsExist
   let g:python_host_prog = '/usr/bin/python2.6'
   let g:python3_host_prog = '/usr/local/bin/python3'
 
-  let g:ycm_path_to_python_interpreter = '/usr/local/bin/python'
+  let g:ycm_path_to_python_interpreter = '/usr/bin/python'
   let g:ycm_python_binary_path = '/usr/local/Cellar/python3/3.5.1'
 
   autocmd BufRead,BufNewFile *.es6 setfiletype javascript
@@ -277,7 +278,8 @@ vmap <silent>gi <Plug>(nyaovim-popup-tooltip-open)
 " Themes, Commands, etc  ----------------------------------------------------{{{
 " Theme
 syntax enable
-colorscheme OceanicNext
+" colorscheme OceanicNext
+colorscheme luna
 set background=dark
 " set background=light
 " no need to fold things in markdown all the time
@@ -390,7 +392,7 @@ imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
 " Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/neosnippets, ~/Github/ionic-snippets, ~/.vim/bundle/angular-vim-snippets/snippets'
+let g:neosnippet#snippets_directory='~/.config/nvim/bundle/neosnippet-snippets/neosnippets, ~/Github/ionic-snippets, ~/.config/nvim/bundle/angular-vim-snippets/snippets'
 
 " SuperTab like snippets behavior.
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
