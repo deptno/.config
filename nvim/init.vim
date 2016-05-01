@@ -128,6 +128,7 @@
   NeoBundle 'ryanoasis/vim-devicons'
 
   NeoBundle 'Quramy/vison'
+  NeoBundle 'jsx/jsx.vim.git'
   call neobundle#end()
 
 " Required:
