@@ -190,11 +190,12 @@ if pluginsExist
   let g:table_mode_corner="|"
 
   " by deptno
-  let g:python_host_prog = '/usr/bin/python2.6'
+  let g:python_host_prog = '/usr/bin/python2.7'
   let g:python3_host_prog = '/usr/local/bin/python3'
 
   let g:ycm_path_to_python_interpreter = '/usr/bin/python'
-  let g:ycm_python_binary_path = '/usr/local/Cellar/python3/3.5.1'
+  let g:ycm_python_binary_path = '/usr/bin/python'
+  "let g:ycm_python_binary_path = '/usr/local/Cellar/python3/3.5.1'
 
   autocmd BufRead,BufNewFile *.es6 setfiletype javascript
 " }}}
@@ -613,7 +614,8 @@ nmap <leader>9 <Plug>AirlineSelectTab9
         endfunction
 
         nmap fj :<C-U>call FormatJSON(v:count)<CR>
-        nmap ,b :<C-U>call Deptno("format", "json")<CR>
+        nmap ,fj :<C-U>call Deptno("format", "json")<CR>
+        nmap ,fx :<C-U>call Deptno("format", "xml")<CR>
         nmap ,trk :<C-U>call DeptnoEcho("translate", "en", getline("."))<CR>
         nmap ,tre :<C-U>call DeptnoEcho("translate", "ko", getline("."))<CR>
         nmap ,trj :<C-U>call DeptnoEcho("translate", "ja", getline("."))<CR>

@@ -1,13 +1,27 @@
+var pd = require('pretty-data').pd;
 module.exports = {
     format: {
         json: function() {
-            var i = process.stdin, d = '';
+            let i = process.stdin, d = '';
             i.resume();
             i.setEncoding('utf8');
             i.on('data', function(data) { d += data; });
             i.on('end', function() {
                 try {
                     console.log(JSON.stringify(JSON.parse(d), null, 4));
+                } catch(ex) {
+                    console.log(d);
+                }
+            });
+        },
+        xml: function() {
+            let i = process.stdin, d = '';
+            i.resume();
+            i.setEncoding('utf8');
+            i.on('data', function(data) { d += data; });
+            i.on('end', function() {
+                try {
+                    console.log(pd.xml(d));
                 } catch(ex) {
                     console.log(d);
                 }
