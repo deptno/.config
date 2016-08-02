@@ -1,0 +1,22 @@
+{
+  "name": "config-deptno",
+  "version": "1.0.0",
+  "description": "",
+  "main": "deptno.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deptno/.config.git"
+  },
+  "author": "deptno@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/deptno/.config/issues"
+  },
+  "homepage": "https://github.com/deptno/.config#readme",
+  "devDependencies": {
+    "pretty-data": "^0.40.0"
+  }
+}
