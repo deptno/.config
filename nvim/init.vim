@@ -589,34 +589,17 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 
         set omnifunc=syntaxcomplete#Complete
 
-        " json
-        function FormatJSON(...) 
-            let code="\"
-                        \ var i = process.stdin, d = '';
-                        \ i.resume();
-                        \ i.setEncoding('utf8');
-                        \ i.on('data', function(data) { d += data; });
-                        \ i.on('end', function() {
-                        \ try {
-                        \     console.log(JSON.stringify(JSON.parse(d), null, 
-                        \ " . (a:0 ? a:1 ? a:1 : 4 : 4) . "));
-                        \ } catch(ex) { console.log(d); }
-                        \ });\""
-            execute "%! node -e " . code 
+        function CallNode(...) 
+            execute '%! node -e "require(\"$HOME/.config/node-connector\")[\"' . a:1 . '\"][\"' . a:2 . '\"]()"'
         endfunction
 
-        function Deptno(...) 
-            execute '%! node -e "require(\"$HOME/.config/deptno\")[\"' . a:1 . '\"][\"' . a:2 . '\"]()"'
+        function CallNodeWithEcho(...) 
+            echom system('node -e "require(\"$HOME/.config/node-connector\")[\"' . a:1 . '\"][\"' . a:2 . '\"](\"' . a:3 . '\")"')
         endfunction
 
-        function DeptnoEcho(...) 
-            echom system('node -e "require(\"$HOME/.config/deptno\")[\"' . a:1 . '\"][\"' . a:2 . '\"](\"' . a:3 . '\")"')
-        endfunction
-
-        nmap fj :<C-U>call FormatJSON(v:count)<CR>
-        nmap ,fj :<C-U>call Deptno("format", "json")<CR>
-        nmap ,fx :<C-U>call Deptno("format", "xml")<CR>
-        nmap ,trk :<C-U>call DeptnoEcho("translate", "en", getline("."))<CR>
-        nmap ,tre :<C-U>call DeptnoEcho("translate", "ko", getline("."))<CR>
-        nmap ,trj :<C-U>call DeptnoEcho("translate", "ja", getline("."))<CR>
+        nmap ,fj :<C-U>call CallNode("format", "json")<CR>
+        nmap ,fx :<C-U>call CallNode("format", "xml")<CR>
+        nmap ,trk :<C-U>call CallNodeWithEcho("translate", "en", getline("."))<CR>
+        nmap ,tre :<C-U>call CallNodeWithEcho("translate", "ko", getline("."))<CR>
+        nmap ,trj :<C-U>call CallNodeWithEcho("translate", "ja", getline("."))<CR>
 endif
