@@ -2,7 +2,7 @@ var pd = require('pretty-data').pd;
 module.exports = {
     format: {
         json: function() {
-            let i = process.stdin, d = '';
+            var i = process.stdin, d = '';
             i.resume();
             i.setEncoding('utf8');
             i.on('data', function(data) { d += data; });
@@ -15,7 +15,7 @@ module.exports = {
             });
         },
         xml: function() {
-            let i = process.stdin, d = '';
+            var i = process.stdin, d = '';
             i.resume();
             i.setEncoding('utf8');
             i.on('data', function(data) { d += data; });
