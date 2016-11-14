@@ -130,6 +130,13 @@
 
   NeoBundle 'Quramy/vison'
   NeoBundle 'jsx/jsx.vim.git'
+
+  "clojure
+  NeoBundle 'https://github.com/tpope/vim-classpath.git'
+  NeoBundle 'https://github.com/tpope/vim-fireplace.git'
+
+  "Dash
+  NeoBundle 'https://github.com/rizzatti/dash.vim.git'
   call neobundle#end()
 
 " Required:
