@@ -137,6 +137,10 @@
 
   "Dash
   NeoBundle 'https://github.com/rizzatti/dash.vim.git'
+
+  "Go
+  NeoBundle 'fatih/vim-go'
+
   call neobundle#end()
 
 " Required:
@@ -286,8 +290,8 @@ vmap <silent>gi <Plug>(nyaovim-popup-tooltip-open)
 " Themes, Commands, etc  ----------------------------------------------------{{{
 " Theme
 syntax enable
-" colorscheme OceanicNext
-colorscheme luna
+colorscheme OceanicNext
+"colorscheme luna
 set background=dark
 " set background=light
 " no need to fold things in markdown all the time
