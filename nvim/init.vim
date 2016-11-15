@@ -141,6 +141,9 @@
   "Go
   NeoBundle 'fatih/vim-go'
 
+  "GraphQL
+  NeoBundle 'jparise/vim-graphql'
+
   call neobundle#end()
 
 " Required:
