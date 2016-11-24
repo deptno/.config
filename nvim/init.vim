@@ -144,6 +144,8 @@
   "GraphQL
   NeoBundle 'jparise/vim-graphql'
 
+  NeoBundle 'kien/ctrlp.vim.git'
+
   call neobundle#end()
 
 " Required:
@@ -212,6 +214,8 @@ if pluginsExist
   "let g:ycm_python_binary_path = '/usr/local/Cellar/python3/3.5.1'
 
   autocmd BufRead,BufNewFile *.es6 setfiletype javascript
+
+  set runtimepath^=~/.vim/bundle/ctrlp.vim
 " }}}
 
 " System mappings  ----------------------------------------------------------{{{
