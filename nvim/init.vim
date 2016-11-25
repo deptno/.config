@@ -143,6 +143,8 @@
 
   "GraphQL
   NeoBundle 'jparise/vim-graphql'
+  NeoBundle 'majutsushi/tagbar'
+  NeoBundle 'AndrewRadev/splitjoin.vim'
 
   call neobundle#end()
 
@@ -616,4 +618,13 @@ nmap <leader>9 <Plug>AirlineSelectTab9
         nmap ,trk :<C-U>call CallNodeWithEcho("translate", "en", getline("."))<CR>
         nmap ,tre :<C-U>call CallNodeWithEcho("translate", "ko", getline("."))<CR>
         nmap ,trj :<C-U>call CallNodeWithEcho("translate", "ja", getline("."))<CR>
+        nmap <F8> :TagbarToggle<CR>
+        nmap ,gd : GoDoc<CR>
+        nmap ,gf : GoFmt<CR>
+        nmap ,gi : GoImport<CR>
+        nmap ,gr : GoRun<CR>
+        nmap ,gb : GoBuild<CR>
+        nmap ,gt : GoTestFunc<CR>
+        nmap ,gtc : GoTestCompile<CR>
+        nmap ,gc : GoCoverageToggle<CR>
 endif
