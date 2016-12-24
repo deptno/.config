@@ -25,7 +25,7 @@
   call neobundle#begin(expand('~/.config/nvim/bundle/'))
   let pluginsExist = 0
 " Let NeoBundle manage NeoBundle
-" Required:
+" Required":
   NeoBundleFetch 'Shougo/neobundle.vim'
 
 " syntax
@@ -78,33 +78,22 @@
   NeoBundle 'gorodinskiy/vim-coloresque'
   NeoBundle 'ap/vim-css-color'
 " Shougo
-  NeoBundle 'Shougo/unite.vim'
-  NeoBundle 'Shougo/unite-outline'
-  NeoBundle 'ujihisa/unite-colorscheme'
-  NeoBundle 'junkblocker/unite-codesearch'
-  NeoBundle 'Shougo/vimfiler.vim'
-  NeoBundle 'Valloric/YouCompleteMe', {
-     \ 'build' : {
-     \     'mac' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-     \     'unix' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-     \     'windows' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-     \     'cygwin' : './install.sh --clang-completer --system-libclang --omnisharp-completer'
-     \    }
-     \ }
-  NeoBundle 'Shougo/vimproc.vim', {
-        \ 'build' : {
-        \     'windows' : 'tools\\update-dll-mingw',
-        \     'cygwin' : 'make -f make_cygwin.mak',
-        \     'mac' : 'make -f make_mac.mak',
-        \     'linux' : 'make',
-        \     'unix' : 'gmake',
-        \    },
-        \ }
+  NeoBundle 'Shougo/denite.nvim'
+  " NeoBundle 'Shougo/vimproc.vim', {
+  "       \ 'build' : {
+  "       \     'windows' : 'tools\\update-dll-mingw',
+  "       \     'cygwin' : 'make -f make_cygwin.mak',
+  "       \     'mac' : 'make -f make_mac.mak',
+  "       \     'linux' : 'make',
+  "       \     'unix' : 'gmake',
+  "       \    },
+  "       \ }
   NeoBundle 'Shougo/deoplete.nvim'
+
   NeoBundle 'Shougo/neco-vim'
   NeoBundle 'Shougo/neoinclude.vim'
   NeoBundleLazy 'ujihisa/neco-look',{'autoload':{'filetypes':['markdown','md']}}
-  " NeoBundle 'mhartington/deoplete-typescript'
+  NeoBundle 'mhartington/deoplete-typescript'
   NeoBundle 'zchee/deoplete-jedi'
 
   NeoBundle 'Shougo/neosnippet.vim'
@@ -112,19 +101,16 @@
   NeoBundle 'honza/vim-snippets'
   NeoBundle 'matthewsimo/angular-vim-snippets'
 
-  " NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf' }
-  " NeoBundle 'junegunn/fzf.vim'
-  " NeoBundle 'ashisha/image.vim'
   NeoBundle 'mhinz/vim-sayonara'
   NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
   NeoBundle 'terryma/vim-multiple-cursors'
   NeoBundle 'rhysd/github-complete.vim'
   NeoBundle 'junegunn/goyo.vim'
   NeoBundle 'https://github.com/danielmiessler/VimBlog'
-  " NeoBundle 'https://github.com/neovim/node-host'
+  NeoBundle 'https://github.com/neovim/node-host'
   NeoBundle 'vim-scripts/SyntaxRange'
   NeoBundleLazy 'fatih/vim-go',{'autoload':{'filetypes':['go']}}
-  NeoBundleLazy 'zchee/deoplete-go',{'autoload':{'filetypes':['go']}}
+  NeoBundleLazy 'zchee/deoplete-go',{'autoload':{'filetypes':['go']}, 'build': {'unix': 'make'}}
   NeoBundle 'rhysd/nyaovim-popup-tooltip'
   NeoBundle 'ryanoasis/vim-devicons'
 
@@ -207,12 +193,17 @@ if pluginsExist
   let g:unite_source_codesearch_command = '$HOME/bin/csearch'
   let g:table_mode_corner="|"
 
+  let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+  let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+  let g:deoplete#sources#go#use_cache = 1
+  "let g:deoplete#sources#go#json_directory = '/path/to/data_dir'
+
   " by deptno
-  let g:python_host_prog = '/usr/bin/python2.7'
+  let g:python_host_prog = '/usr/local/bin/python2'
   let g:python3_host_prog = '/usr/local/bin/python3'
 
-  let g:ycm_path_to_python_interpreter = '/usr/bin/python'
-  let g:ycm_python_binary_path = '/usr/bin/python'
+  "let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+  "let g:ycm_python_binary_path = '/usr/bin/python'
   "let g:ycm_python_binary_path = '/usr/local/Cellar/python3/3.5.1'
 
   autocmd BufRead,BufNewFile *.es6 setfiletype javascript
@@ -473,32 +464,10 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
   autocmd FileType html,css EmmetInstall
 "}}}
 
-" unite ---------------------------------------------------------------------{{{
-"
-let g:unite_data_directory='~/.nvim/.cache/unite'
-let g:unite_source_history_yank_enable=1
-let g:unite_prompt='» '
-let g:unite_source_rec_async_command =['ag', '--follow', '--nocolor', '--nogroup','--hidden', '-g', '', '--ignore', '.git', '--ignore', '*.png', '--ignore', 'lib']
-
-nnoremap <silent> <c-p> :Unite -auto-resize -start-insert -direction=botright file_rec/neovim2<CR>
-nnoremap <silent> <leader>c :Unite -auto-resize -start-insert -direction=botright colorscheme<CR>
-nnoremap <silent> <leader>u :Unite neobundle/update<CR>
-
-" Custom mappings for the unite buffer
-autocmd FileType unite call s:unite_settings()
-
-function! s:unite_settings() "{{{
-  " Enable navigation with control-j and control-k in insert mode
-  imap <buffer> <C-j>   <Plug>(unite_select_next_line)
-  imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
-endfunction "}}}
-
-" Git from unite...ERMERGERD ------------------------------------------------{{{
-let g:unite_source_menu_menus = {} " Useful when building interfaces at appropriate places
-let g:unite_source_menu_menus.git = {
-  \ 'description' : 'Fugitive interface',
-  \}
-let g:unite_source_menu_menus.git.command_candidates = [
+" denite ---------------------------------------------------------------------{{{
+let s:menus = {}
+let s:menus.git = {'description' : 'git'}
+let s:menus.git.command_candidates = [
   \[' git status', 'Gstatus'],
   \[' git diff', 'Gvdiff'],
   \[' git commit', 'Gcommit'],
@@ -527,7 +496,24 @@ let g:unite_source_menu_menus.git.command_candidates = [
   \[' git grep',  'exe "Ggrep " input("string: ")'],
   \[' git prompt', 'exe "Git! " input("command: ")'],
   \] " Append ' --' after log to get commit info commit buffers
-nnoremap <silent> <Leader>g :Unite -direction=botright -silent -buffer-name=git -start-insert menu:git<CR>
+let s:menus.go = {'description' : 'golang'}
+let s:menus.go.command_candidates = [
+  \[' go doc', 'GoDoc'],
+  \[' go declaration', 'GoDecls'],
+  \[' go declaration with directory', 'GoDeclsDir'],
+  \[' go fmt', 'GoFmt'],
+  \[' go imports', 'GoImports'],
+  \[' go run', 'GoRun'],
+  \[' go build', 'GoBuild'],
+  \[' go height variable', 'GoSameIds'],
+  \[' go toggle test file', 'GoTestFunc'],
+  \[' go compile test file', 'GoTestCompile'],
+  \[' go toggle coverage', 'GoCoverageToggle'],
+\]
+call denite#custom#var('menu', 'menus', s:menus)
+
+nnoremap <silent> <Leader>git :Denite menu:git<CR>
+nnoremap <silent> <Leader>go :Denite menu:go<CR>
 "}}}
 "}}}
 
@@ -623,12 +609,6 @@ nmap <leader>9 <Plug>AirlineSelectTab9
         nmap ,tre :<C-U>call CallNodeWithEcho("translate", "ko", getline("."))<CR>
         nmap ,trj :<C-U>call CallNodeWithEcho("translate", "ja", getline("."))<CR>
         nmap <F8> :TagbarToggle<CR>
-        nmap ,gd : GoDoc<CR>
-        nmap ,gf : GoFmt<CR>
-        nmap ,gi : GoImport<CR>
-        nmap ,gr : GoRun<CR>
-        nmap ,gb : GoBuild<CR>
-        nmap ,gt : GoTestFunc<CR>
-        nmap ,gtc : GoTestCompile<CR>
-        nmap ,gc : GoCoverageToggle<CR>
+
+        let g:go_auto_type_info = 1
 endif
