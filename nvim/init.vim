@@ -504,6 +504,7 @@ let s:menus.go.command_candidates = [
   \[' go fmt', 'GoFmt'],
   \[' go imports', 'GoImports'],
   \[' go run', 'GoRun'],
+  \[' go rename', 'GoRename'],
   \[' go build', 'GoBuild'],
   \[' go height variable', 'GoSameIds'],
   \[' go toggle test file', 'GoTestFunc'],
