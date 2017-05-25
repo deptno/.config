@@ -202,9 +202,9 @@ if pluginsExist
   let g:python_host_prog = '/usr/local/bin/python2'
   let g:python3_host_prog = '/usr/local/bin/python3'
 
-  "let g:ycm_path_to_python_interpreter = '/usr/bin/python'
-  "let g:ycm_python_binary_path = '/usr/bin/python'
-  "let g:ycm_python_binary_path = '/usr/local/Cellar/python3/3.5.1'
+  let g:ycm_path_to_python_interpreter = '/usr/local/bin/python3'
+  let g:ycm_python_binary_path = '/usr/local/bin/python2'
+  let g:ycm_python_binary_path = '/usr/local/bin/python3'
 
   autocmd BufRead,BufNewFile *.es6 setfiletype javascript
 
