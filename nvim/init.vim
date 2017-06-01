@@ -79,15 +79,15 @@
   NeoBundle 'ap/vim-css-color'
 " Shougo
   NeoBundle 'Shougo/denite.nvim'
-  " NeoBundle 'Shougo/vimproc.vim', {
-  "       \ 'build' : {
-  "       \     'windows' : 'tools\\update-dll-mingw',
-  "       \     'cygwin' : 'make -f make_cygwin.mak',
-  "       \     'mac' : 'make -f make_mac.mak',
-  "       \     'linux' : 'make',
-  "       \     'unix' : 'gmake',
-  "       \    },
-  "       \ }
+  NeoBundle 'Shougo/vimproc.vim', {
+        \ 'build' : {
+        \     'windows' : 'tools\\update-dll-mingw',
+        \     'cygwin' : 'make -f make_cygwin.mak',
+        \     'mac' : 'make -f make_mac.mak',
+        \     'linux' : 'make',
+        \     'unix' : 'gmake',
+        \    },
+        \ }
   NeoBundle 'Shougo/deoplete.nvim'
 
   NeoBundle 'Shougo/neco-vim'
