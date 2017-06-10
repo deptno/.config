@@ -1,6 +1,37 @@
 {
     "sites": [
         {
+            "name": "zangsisi 신간",
+            "url": "http://zangsisi.net",
+            "stages": [
+                {
+                    "type": "list",
+                    "selector": "#recent-manga a.list",
+                    "attrs": {
+                        "value": "href"
+                    },
+                    "message": "만화 선택",
+                    "operation": {
+                        "type": "next"
+                    }
+                },
+                {
+                    "type": "download",
+                    "selector": "#post .contents img",
+                    "attrs": {
+                        "value": "src"
+                    },
+                    "prefixes": {
+                        "doing": "[받는중] ",
+                        "done": "[완료] ${0}"
+                    },
+                    "operation": {
+                        "type": "prev"
+                    }
+                }
+            ]
+        },
+        {
             "name": "zangsisi 연재중",
             "url": "http://zangsisi.net",
             "stages": [
@@ -108,6 +139,41 @@
                         "value": "href"
                     },
                     "message": "책 선택",
+                    "operation": {
+                        "type": "next"
+                    }
+                },
+                {
+                    "type": "download",
+                    "selector": "#post .contents img",
+                    "attrs": {
+                        "value": "src"
+                    },
+                    "options": [
+                        "zip",
+                        "splitRight"
+                    ],
+                    "prefixes": {
+                        "doing": "[받는중] ",
+                        "done": "[완료] ${0}"
+                    },
+                    "operation": {
+                        "type": "prev"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "zangsisi 신간(오른쪽에서 왼쪽 읽기)",
+            "url": "http://zangsisi.net",
+            "stages": [
+                {
+                    "type": "list",
+                    "selector": "#recent-manga a.list",
+                    "attrs": {
+                        "value": "href"
+                    },
+                    "message": "만화 선택",
                     "operation": {
                         "type": "next"
                     }
