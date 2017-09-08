@@ -134,6 +134,8 @@
 
   NeoBundle 'kien/ctrlp.vim.git'
 
+  "Scala
+  NeoBundle 'derekwyatt/vim-scala'
   call neobundle#end()
 
 " Required:
