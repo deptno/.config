@@ -1,8 +1,15 @@
 " plugin
 call plug#begin('~/.config/plugged')
 
-" color
+" looks
 Plug 'KeitaNakamura/neodark.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" git
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+" editing
+Plug 'tpope/vim-surround'
 " typescript
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
@@ -18,4 +25,4 @@ set clipboard=unnamed
 colorscheme neodark
 
 " syntax highlight
-autocmd FileType typescript :set makeprg=tsc
+"autocmd FileType typescript :set makeprg=tsc
