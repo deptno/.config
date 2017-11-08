@@ -1,10 +1,19 @@
-" plugin
+" plugins
 call plug#begin('~/.config/plugged')
 
-" color
+" looks
 Plug 'KeitaNakamura/neodark.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'w0rp/ale'
+" git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+" editing
+Plug 'tpope/vim-surround'
+" language
+Plug 'sheerun/vim-polyglot'
 " typescript
-Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
 
 call plug#end()
@@ -17,5 +26,8 @@ set clipboard=unnamed
 " color
 colorscheme neodark
 
-" syntax highlight
-autocmd FileType typescript :set makeprg=tsc
+" ale
+" use tsuquyomi
+let g:ale_linters = {
+      \   'typescript': ['tsserver'],
+      \}
