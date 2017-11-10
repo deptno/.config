@@ -7,6 +7,7 @@ Plug 'w0rp/ale'
 Plug 'scrooloose/nerdtree'
 Plug 'mhinz/vim-startify'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 " git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -72,3 +73,5 @@ let g:fzf_colors = {
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment']
   \}
+" startify
+let g:startify_session_dir = '~/.config/vim/session'
