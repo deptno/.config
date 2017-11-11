@@ -13,7 +13,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 " editing
-Plug 'tpope/vim-surround' " language
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+" language
 Plug 'sheerun/vim-polyglot'
 " language typescript
 Plug 'Quramy/tsuquyomi'
