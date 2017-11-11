@@ -3,6 +3,8 @@ call plug#begin('~/.config/plugged')
 
 " syntax
 Plug 'w0rp/ale'
+Plug 'lifepillar/vim-mucomplete'
+Plug 'davidhalter/jedi-vim'
 " browsing
 Plug 'scrooloose/nerdtree'
 Plug 'mhinz/vim-startify'
@@ -33,6 +35,7 @@ call plug#end()
 set tabstop=2 shiftwidth=2 expandtab
 set number
 set clipboard=unnamed
+set hlsearch
 
 " color
 colorscheme neodark
@@ -77,3 +80,11 @@ let g:fzf_colors = {
   \}
 " startify
 let g:startify_session_dir = '~/.config/vim/session'
+" mucomplete
+set completeopt+=menuone
+set noshowmode shortmess+=c
+set completeopt-=preview
+set completeopt+=longest,menuone,noinsert,noselect
+let g:jedi#popup_on_dot = 0  " It may be 1 as well
+let g:mucomplete#enable_auto_at_startup = 1
+
