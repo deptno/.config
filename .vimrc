@@ -51,7 +51,6 @@ autocmd FileType typescript nmap <buffer> K : <C-u>echo tsuquyomi#hint()<CR>
 autocmd FileType typescript nmap <buffer> <Leader>i <Plug>(TsuquyomiImport)
 " nerdtree
 map <Leader>1 :NERDTreeToggle<CR>
-
 " fzf"
 function! s:build_quickfix_list(lines)
   call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
