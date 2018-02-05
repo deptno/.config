@@ -136,6 +136,8 @@
 
   "Scala
   NeoBundle 'derekwyatt/vim-scala'
+
+  NeoBundle 'sheerun/vim-polyglot'
   call neobundle#end()
 
 " Required:

@@ -21,6 +21,9 @@ Plug 'tpope/vim-commentary'
 Plug 'sheerun/vim-polyglot'
 " language typescript
 Plug 'Quramy/tsuquyomi'
+" language terraform
+Plug 'hashivim/vim-terraform'
+Plug 'juliosueiras/vim-terraform-completion'
 " http
 Plug 'diepm/vim-rest-console'
 " looks (may need lazy load)
@@ -49,6 +52,11 @@ autocmd FileType typescript nmap <buffer> <Leader>e <Plug>(TsuquyomiRenameSymbol
 autocmd FileType typescript nmap <buffer> <Leader>E <Plug>(TsuquyomiRenameSymbolC)
 autocmd FileType typescript nmap <buffer> K : <C-u>echo tsuquyomi#hint()<CR>
 autocmd FileType typescript nmap <buffer> <Leader>i <Plug>(TsuquyomiImport)
+" terraform
+let g:terraform_align = 1
+let g:terraform_fmt_on_save = 1
+let g:terraform_remap_spacebar = 1
+autocmd FileType terraform setlocal commentstring=#%s
 " nerdtree
 map <Leader>1 :NERDTreeToggle<CR>
 " fzf"
