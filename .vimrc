@@ -3,8 +3,16 @@ call plug#begin('~/.config/plugged')
 
 " syntax
 Plug 'w0rp/ale'
+" autocompletion
 Plug 'lifepillar/vim-mucomplete'
-Plug 'davidhalter/jedi-vim'
+Plug 'juliosueiras/vim-terraform-completion' " terraform
+Plug 'davidhalter/jedi-vim' "python
+" language
+Plug 'sheerun/vim-polyglot'
+Plug 'Quramy/tsuquyomi' " typescript
+Plug 'hashivim/vim-terraform' " terraform
+Plug 'fatih/vim-go' " terraform
+
 " browsing
 Plug 'scrooloose/nerdtree'
 Plug 'mhinz/vim-startify'
@@ -17,13 +25,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 " editing
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-" language
-Plug 'sheerun/vim-polyglot'
-" language typescript
-Plug 'Quramy/tsuquyomi'
-" language terraform
-Plug 'hashivim/vim-terraform'
-Plug 'juliosueiras/vim-terraform-completion'
 " http
 Plug 'diepm/vim-rest-console'
 " looks (may need lazy load)
@@ -89,7 +90,7 @@ let g:fzf_colors = {
 let g:startify_session_dir = '~/.config/vim/session'
 " mucomplete
 set completeopt+=menuone
-set noshowmode shortmess+=c
+set shortmess+=c
 set completeopt-=preview
 set completeopt+=longest,menuone,noinsert,noselect
 let g:jedi#popup_on_dot = 0  " It may be 1 as well
