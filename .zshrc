@@ -1,4 +1,4 @@
-source .config/antigen.zsh
+source ~/.config/antigen.zsh
 
 # Load the oh-my-zsh's library.
 # antigen use oh-my-zsh
@@ -20,3 +20,8 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 # Tell Antigen that you're done.
 antigen apply
 eval "$(direnv hook zsh)"
+
+GOVERSION=$(brew list go | head -n 1 | cut -d '/' -f 6)
+export GOROOT=$(brew --prefix)/Cellar/go/$GOVERSION/libexec
+export GOPATH=$HOME/workspace
+export PATH=$PATH:$GOPATH/bin
