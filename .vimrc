@@ -22,6 +22,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'junegunn/vim-github-dashboard'
 " editing
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
