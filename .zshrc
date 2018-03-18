@@ -25,3 +25,4 @@ GOVERSION=$(brew list go | head -n 1 | cut -d '/' -f 6)
 export GOROOT=$(brew --prefix)/Cellar/go/$GOVERSION/libexec
 export GOPATH=$HOME/workspace
 export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/usr/local/miniconda3/bin
