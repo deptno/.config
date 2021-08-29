@@ -1,0 +1,29 @@
+# This is Git's per-user configuration file.
+[user]
+	name = deptno
+	email = deptno@gmail.com
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore_global
+[alias]
+	l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %C(bold blue)<%an>%Creset %s %Cgreen(%cr)' --abbrev-commit
+[diff]
+	tool = vscode
+	compactionHeuristic = true
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = ~/.stCommitMsg
+
+[includeIf "gitdir:~/workspace/src/github.com/zigbang/"]
+	path = ~/.gitconfig.zigbang
