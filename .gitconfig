@@ -6,7 +6,7 @@
 	editor = vim
 	excludesfile = ~/.gitignore_global
 [alias]
-	l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %C(bold blue)<%an>%Creset %s %Cgreen(%cr)' --abbrev-commit
+  l = log --color --graph --pretty=format:'%Cgreen(%cr) %Cred%h%Creset -%C(yellow)%d%Creset %C(bold blue)<%ae>%Creset %s' --abbrev-commit
 [diff]
 	tool = vscode
 	compactionHeuristic = true

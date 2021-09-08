@@ -8,6 +8,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'cohama/lexima.vim'
+Plug 'vimwiki/vimwiki'
 
 if has("nvim")
   Plug 'hoob3rt/lualine.nvim'

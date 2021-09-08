@@ -119,6 +119,7 @@ if has("unix")
 endif
 
 runtime ./maps.vim
+runtime ./wiki.vim
 "}}}
 
 " Syntax theme "{{{
