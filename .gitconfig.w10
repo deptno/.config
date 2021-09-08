@@ -1,4 +1,2 @@
 [user]
 	signingkey = 0C37C0386A91D187
-[core]
-	autocrlf = true
