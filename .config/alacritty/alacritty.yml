@@ -4,3 +4,12 @@ font:
   normal:
     family: Hack Nerd Font Mono
   size: 18
+bell:
+  animation: Ease
+  duration: 1000
+  color: '0xffffff'
+  # Example:
+  #   command:
+  #     program: /bin/notify-send
+  #     args: ["Hello, World!"]
+  command: None
