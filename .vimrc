@@ -7,3 +7,9 @@ if has("win32")
     augroup END
   end
 endif
+if has("unix")
+  let s:uname = system("uname -s")
+  if s:uname == "Darwin\n"
+    runtime ~/.config/nvim/macos.vim
+  endif
+endif
