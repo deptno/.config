@@ -24,6 +24,8 @@ if has("nvim")
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
+  Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'Yggdroot/indentLine'
 endif
 
 Plug 'groenewege/vim-less', { 'for': 'less' }
