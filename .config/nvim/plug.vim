@@ -26,6 +26,7 @@ if has("nvim")
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'Yggdroot/indentLine'
+  Plug 'skywind3000/vim-quickui'
 endif
 
 Plug 'groenewege/vim-less', { 'for': 'less' }
