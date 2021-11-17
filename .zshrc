@@ -1,27 +1,23 @@
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-alias k=kubectl
-
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-
-# tpm
 if [[ -z "$TMUX" ]]
 then
   if [[ ! -d ~/.tmux/plugins/tpm ]]
   then
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-  else
-    git -C ~/.tmux/plugins/tpm pull --rebase origin 1> /dev/null
   fi
+
+  export ANDROID_HOME=$HOME/Library/Android/sdk
+  export PATH=$PATH:$ANDROID_HOME/emulator
+  export PATH=$PATH:$ANDROID_HOME/tools
+  export PATH=$PATH:$ANDROID_HOME/tools/bin
+  export PATH=$PATH:$ANDROID_HOME/platform-tools
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
   tmux attach -t default || tmux new -s default
+  exit
 else 
-  # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+    # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
   # Initialization code that may require console input (password prompts, [y/n]
   # confirmations, etc.) must go above this block; everything else may go below.
   if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -135,4 +131,6 @@ else
 
   # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
   [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+  alias k=kubectl
 fi
