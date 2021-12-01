@@ -1,5 +1,16 @@
 if [[ -z "$TMUX" ]]
 then
+  if [[ -d ${XDG_CONFIG_HOME:-$HOME/.config}/nnn/plugins ]]
+  then
+    plugins=$(ls ${XDG_CONFIG_HOME:-$HOME/.config}/nnn/plugins | wc -l)
+
+    if [[ plugins -eq 0 ]]
+    then
+      echo "install nnn plugins"
+      curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
+    fi
+  fi
+  
   if [[ ! -d ~/.tmux/plugins/tpm ]]
   then
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -133,4 +144,7 @@ else
   [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
   alias k=kubectl
+
+  export NNN_FIFO=/tmp/nnn.fifo
+  export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
 fi
