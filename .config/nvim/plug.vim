@@ -9,6 +9,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'cohama/lexima.vim'
 Plug 'vimwiki/vimwiki'
+Plug 'voldikss/vim-floaterm'
 
 if has("nvim")
   Plug 'hoob3rt/lualine.nvim'
@@ -28,9 +29,6 @@ if has("nvim")
   Plug 'Yggdroot/indentLine'
   Plug 'skywind3000/vim-quickui'
 endif
-
-Plug 'groenewege/vim-less', { 'for': 'less' }
-Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 
 call plug#end()
 
