@@ -1,5 +1,8 @@
 env:
   TERM: xterm-256color
+colors:
+  primary:
+    background: '#002b36' # base03
 font:
   normal:
     family: Hack Nerd Font Mono
