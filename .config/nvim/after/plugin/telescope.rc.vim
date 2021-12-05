@@ -8,7 +8,6 @@ nnoremap <silent> ;t <cmd>Telescope<cr>
 lua << EOF
 local actions = require('telescope.actions')
 -- Global remapping
-------------------------------
 require('telescope').setup{
   defaults = {
     mappings = {
@@ -19,5 +18,7 @@ require('telescope').setup{
     file_ignore_patterns = {"node_modules"}
   }
 }
+--- vimwiki
+require('telescope').load_extension('vimwiki')
+require('telescope').load_extension('vw')
 EOF
-

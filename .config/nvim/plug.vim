@@ -7,9 +7,11 @@ call plug#begin()
 Plug 'arcticicestudio/nord-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-surround'
 Plug 'cohama/lexima.vim'
-Plug 'vimwiki/vimwiki'
+Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 Plug 'voldikss/vim-floaterm'
+Plug 'mhinz/vim-startify'
 
 if has("nvim")
   Plug 'hoob3rt/lualine.nvim'
@@ -28,6 +30,7 @@ if has("nvim")
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'Yggdroot/indentLine'
   Plug 'skywind3000/vim-quickui'
+  Plug 'ElPiloto/telescope-vimwiki.nvim'
 endif
 
 call plug#end()
