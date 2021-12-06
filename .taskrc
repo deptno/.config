@@ -40,3 +40,9 @@ include dark-256.theme
 #include no-color.theme
 
 news.version=2.6.0
+
+report.sync.columns=description
+report.sync.description='sync .git'
+report.sync.filter=status:never
+report.sync.labels=Description
+report.sync.sort=description
