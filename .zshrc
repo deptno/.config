@@ -139,6 +139,7 @@ else
   [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
   alias k=kubectl
+  alias grep-apt="GREP_COLOR='35;47' grep --color -E 'jinyoung|yjoh|jiyoung|pdj|woong|deptno|$'"
 
   export NNN_FIFO=/tmp/nnn.fifo
   export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
