@@ -1,6 +1,6 @@
 **/*
 !.gitignore*
 !.gitconfig*
-!.config/nvim
-!.config/alacritty
+!.config/nvim/*
+!.config/alacritty/**/*
 !.task*
