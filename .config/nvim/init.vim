@@ -107,20 +107,7 @@ autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 
 "}}}
 
-" Imports "{{{
-" ---------------------------------------------------------------------
 runtime ./plug.vim
-if has("unix")
-  let s:uname = system("uname -s")
-  " Do Mac stuff
-  if s:uname == "Darwin\n"
-    runtime ./macos.vim
-  endif
-endif
-
-runtime ./maps.vim
-runtime ./wiki.vim
-"}}}
 
 " Syntax theme "{{{
 " ---------------------------------------------------------------------
@@ -144,3 +131,22 @@ set exrc
 "}}}
 
 " vim: set foldmethod=marker foldlevel=0:
+
+let g:tagbar_type_markdown = {
+    \ 'ctagstype' : 'markdown',
+    \ 'kinds' : [
+            \ 'h:headings',
+            \ 'l:links',
+            \ 'i:images'
+        \ ],
+    \ "sort" : 0
+\ }
+let g:tagbar_type_vimwiki = {
+    \ 'ctagstype' : 'vimwiki',
+    \ 'kinds' : [
+            \ 'h:headings',
+            \ 'l:links',
+            \ 'i:images'
+        \ ],
+    \ "sort" : 0
+\ }
