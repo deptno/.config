@@ -18,7 +18,7 @@ bell:
   command: None
 window:
   padding:
-    x: 5 # fix 48cx issue
+    x: 10 # fix 48cx issue
   history: 50000
 
 colors: # https://github.com/eendroroy/alacritty-theme/blob/master/themes/afterglow.yaml
