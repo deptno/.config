@@ -41,6 +41,7 @@ include dark-gray-blue-256.theme
 
 news.version=2.6.0
 
+# reports(command)
 report.sync.columns=description
 report.sync.description='sync .git'
 report.sync.filter=status:never
@@ -52,3 +53,25 @@ report.commits.description='git log'
 report.commits.filter=status:never
 report.commits.labels=Description
 report.commits.sort=description
+
+# taskwarrior-tui color
+#color.deleted=white
+#color.completed
+#color.active
+#color.overdue
+#color.scheduled
+#color.due.today
+#color.due
+#color.blocked
+#color.blocking
+#color.recurring
+#color.tagged
+
+context.zigbang.read=project:zigbang
+context.zigbang.write=project:zigbang
+context.vim.read=+vim
+context.vim.write=+vim
+context.life.read=+life
+context.life.write=+life
+context.idea.read=+idea
+context.idea.write=+idea
