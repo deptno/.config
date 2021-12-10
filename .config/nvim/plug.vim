@@ -12,6 +12,11 @@ Plug 'cohama/lexima.vim'
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 Plug 'voldikss/vim-floaterm'
 Plug 'mhinz/vim-startify'
+Plug 'preservim/tagbar'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'tools-life/taskwiki'
+Plug 'itchyny/vim-gitbranch'
+Plug 'rust-lang/rust.vim'
 
 if has("nvim")
   Plug 'hoob3rt/lualine.nvim'
@@ -31,7 +36,22 @@ if has("nvim")
   Plug 'Yggdroot/indentLine'
   Plug 'skywind3000/vim-quickui'
   Plug 'ElPiloto/telescope-vimwiki.nvim'
+  Plug 'github/copilot.vim'
 endif
 
 call plug#end()
+
+if has("unix")
+  let s:uname = system("uname -s")
+  " Do Mac stuff
+  if s:uname == "Darwin\n"
+    runtime ./macos.vim
+  endif
+endif
+
+runtime ./maps.vim
+runtime ./wiki.vim
+runtime ./tagbar.vim
+runtime ./startify.vim
+runtime ./gutentags.vim
 
