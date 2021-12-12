@@ -17,6 +17,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'tools-life/taskwiki'
 Plug 'itchyny/vim-gitbranch'
 Plug 'rust-lang/rust.vim'
+Plug 'itchyny/vim-cursorword'
 
 if has("nvim")
   Plug 'hoob3rt/lualine.nvim'
