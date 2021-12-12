@@ -20,6 +20,7 @@ Plug 'itchyny/vim-gitbranch'
 Plug 'rust-lang/rust.vim'
 Plug 'itchyny/vim-cursorword'
 Plug 'frazrepo/vim-rainbow'
+Plug 'tools-life/taskwiki'
 
 if has("nvim")
   Plug 'hoob3rt/lualine.nvim'
