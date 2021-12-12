@@ -23,20 +23,24 @@ Plug 'frazrepo/vim-rainbow'
 Plug 'tools-life/taskwiki'
 
 if has("nvim")
-  Plug 'hoob3rt/lualine.nvim'
-  Plug 'kristijanhusak/defx-git'
+  " font
+  Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'yamatsum/nvim-nonicons'
   Plug 'kristijanhusak/defx-icons'
+
+  " statusline
+  Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+
+  Plug 'kristijanhusak/defx-git'
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'neovim/nvim-lspconfig'
   Plug 'glepnir/lspsaga.nvim'
   Plug 'folke/lsp-colors.nvim'
   Plug 'nvim-lua/completion-nvim'
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
-  Plug 'kyazdani42/nvim-web-devicons'
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
-  Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'Yggdroot/indentLine'
   Plug 'skywind3000/vim-quickui'
   Plug 'ElPiloto/telescope-vimwiki.nvim'
@@ -53,5 +57,6 @@ if has("unix")
   endif
 endif
 
-runtime! ./plugin-config/*.vim
+runtime! plugin-config/*.vim
+runtime! plugin-config/*.lua
 
