@@ -32,7 +32,7 @@ let g:startify_bookmarks = [
       \ '~/.tmux.conf',
       \ '~/.taskrc',
       \ '~/.config/nvim/init.vim',
-      \ '~/.config/nvim/plug.vim',
+      \ '~/.config/nvim/plugin.vim',
       \ '~/.gitconfig',
       \ '~/.gitignore',
       \ '~/.gitignore_global',
