@@ -54,4 +54,5 @@ runtime ./wiki.vim
 runtime ./tagbar.vim
 runtime ./startify.vim
 runtime ./gutentags.vim
+runtime ./copilot.vim
 
