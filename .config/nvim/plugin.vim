@@ -49,5 +49,5 @@ if has("unix")
   endif
 endif
 
-runtime ./plugin/*.vim
+runtime! ./plugin-config/*.vim
 
