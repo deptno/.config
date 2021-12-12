@@ -107,7 +107,7 @@ autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 
 "}}}
 
-runtime ./plug.vim
+runtime ./plugin.vim
 
 " Syntax theme "{{{
 " ---------------------------------------------------------------------

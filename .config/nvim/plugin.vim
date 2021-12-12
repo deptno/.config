@@ -49,10 +49,5 @@ if has("unix")
   endif
 endif
 
-runtime ./maps.vim
-runtime ./vimwiki.vim
-runtime ./tagbar.vim
-runtime ./startify.vim
-runtime ./gutentags.vim
-runtime ./copilot.vim
+runtime ./plugin/*.vim
 
