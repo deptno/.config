@@ -75,3 +75,4 @@ context.life.read=+life
 context.life.write=+life
 context.idea.read=+idea
 context.idea.write=+idea
+context=vim
