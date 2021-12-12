@@ -8,6 +8,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
 Plug 'cohama/lexima.vim'
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 Plug 'voldikss/vim-floaterm'
@@ -18,6 +19,7 @@ Plug 'tools-life/taskwiki'
 Plug 'itchyny/vim-gitbranch'
 Plug 'rust-lang/rust.vim'
 Plug 'itchyny/vim-cursorword'
+Plug 'frazrepo/vim-rainbow'
 
 if has("nvim")
   Plug 'hoob3rt/lualine.nvim'
