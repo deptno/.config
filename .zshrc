@@ -140,6 +140,8 @@ else
 
   alias k=kubectl
   alias grep-apt="GREP_COLOR='35;47' grep --color -E 'jinyoung|yjoh|jiyoung|pdj|woong|deptno|$'"
+  alias ll="exa --long --all --icons --git --time-style=long-iso --color-scale --links --header --sort=mod --reverse --group-directories-first"
+
 
   export NNN_FIFO=/tmp/nnn.fifo
   export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
