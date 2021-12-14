@@ -19,12 +19,12 @@ function! s:gitUntracked()
 endfunction
 
 let g:startify_lists = [
+      \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+      \ { 'type': 'sessions',  'header': ['   Sessions']       },
+      \ { 'type': 'files',     'header': ['   MRU']            },
       \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
       \ { 'type': function('s:gitModified'),  'header': ['   git modified']},
       \ { 'type': function('s:gitUntracked'), 'header': ['   git untracked']},
-      \ { 'type': 'files',     'header': ['   MRU']            },
-      \ { 'type': 'sessions',  'header': ['   Sessions']       },
-      \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
       \ { 'type': 'commands',  'header': ['   Commands']       },
       \ ]
 let g:startify_bookmarks = [
@@ -51,3 +51,5 @@ endfunction
 " autocmd VimLeavePre *             silent execute 'SSave! ' . GetUniqueSessionName()
 command! StartifySaveBranchSession ':SSave! ' . GetUniqueSessionName()
 command! StartifyLoadBranchSession ':SLoad ' . GetUniqueSessionName()
+
+nnoremap <silent> ;s :Startify<CR>
