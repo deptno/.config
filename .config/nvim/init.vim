@@ -150,3 +150,6 @@ let g:tagbar_type_vimwiki = {
         \ ],
     \ "sort" : 0
 \ }
+
+" insert timestamp
+nnoremap ;d "=strftime("%Y/%m/%d %T")<CR>P
