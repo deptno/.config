@@ -75,3 +75,5 @@ context.life.read=+life
 context.life.write=+life
 context.idea.read=+idea
 context.idea.write=+idea
+context.due-today.read=due:today priority:H
+context.due-today.write=due:today priority:H
