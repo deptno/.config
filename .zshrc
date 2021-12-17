@@ -145,4 +145,8 @@ else
 
   export NNN_FIFO=/tmp/nnn.fifo
   export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
+
+  export HISTSIZE=1000000000
+  export SAVEHIST=1000000000
+  setopt EXTENDED_HISTORY
 fi
