@@ -149,4 +149,6 @@ else
   export HISTSIZE=1000000000
   export SAVEHIST=1000000000
   setopt EXTENDED_HISTORY
+
+  source ~/.zshrc.zigbang
 fi
