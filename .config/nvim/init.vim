@@ -132,24 +132,10 @@ set exrc
 
 " vim: set foldmethod=marker foldlevel=0:
 
-let g:tagbar_type_markdown = {
-    \ 'ctagstype' : 'markdown',
-    \ 'kinds' : [
-            \ 'h:headings',
-            \ 'l:links',
-            \ 'i:images'
-        \ ],
-    \ "sort" : 0
-\ }
-let g:tagbar_type_vimwiki = {
-    \ 'ctagstype' : 'vimwiki',
-    \ 'kinds' : [
-            \ 'h:headings',
-            \ 'l:links',
-            \ 'i:images'
-        \ ],
-    \ "sort" : 0
-\ }
-
 " insert timestamp
-nnoremap ;d "=strftime("%Y/%m/%d %T")<CR>P
+nnoremap ;d a<space><space><esc>"=strftime("%Y-%m-%d %T")<cr>P
+nnoremap ;dd a<space><space><esc>"=strftime("%Y-%m-%d")<cr>P
+
+iab <expr> #tomorrow; strftime("%Y-%m-%d", localtime() + 24*3600)
+iab <expr> #yesterday; strftime("%Y-%m-%d", localtime() + 24*3600)
+iab <expr> #today; strftime("%Y-%m-%d")

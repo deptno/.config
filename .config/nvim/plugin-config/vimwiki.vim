@@ -31,7 +31,7 @@ nnoremap <F4> :execute "VWS /" . expand("<cword>") . "/" <Bar> :lopen<CR>
 " Shift F4 키를 누르면 현재 문서를 링크한 모든 서를 검색한다
 nnoremap <S-F4> :execute "VWB" <Bar> :lopen<CR>문
 
-autocmd FileType vimwiki nmap <S-x> <Plug>VimwikiToggleListItem
+autocmd FileType vimwiki nmap <S-x> <Plug>VimwikiToggleListItemj
 
 set path+=~/workspace/src/github.com/deptno/deptno.github.io.wiki
 set path+=~/workspace/src/github.com/deptno/wiki
