@@ -3,4 +3,6 @@
 	email = deptno@zigbang.com
 [core]
 	sshCommand = ssh -i ~/.ssh/id_ed25519.zb
+[url "git@github.com:zigbang"]
+	insteadOf = https://github.com/zigbang
 
