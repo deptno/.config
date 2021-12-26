@@ -1,23 +1,16 @@
-if [[ -z "$TMUX" ]]
-then
-  if [[ -d ${XDG_CONFIG_HOME:-$HOME/.config}/nnn/plugins ]]
-  then
+if [[ -z "$TMUX" ]]; then
+  if [[ -d ${XDG_CONFIG_HOME:-$HOME/.config}/nnn/plugins ]]; then
     plugins=$(ls ${XDG_CONFIG_HOME:-$HOME/.config}/nnn/plugins | wc -l)
 
-    if [[ plugins -eq 0 ]]
-    then
+    if [[ plugins -eq 0 ]]; then
       echo "install nnn plugins"
       curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
     fi
   fi
   
-  if [[ ! -d ~/.tmux/plugins/tpm ]]
-  then
+  if [[ ! -d ~/.tmux/plugins/tpm ]]; then
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   fi
-
-  tmux attach -t default || tmux new -s default
-  exit
 else 
   export ANDROID_HOME=$HOME/Library/Android/sdk
   export PATH=$PATH:$ANDROID_HOME/emulator
