@@ -8,7 +8,7 @@
 [alias]
   l = log --color --graph --pretty=format:'%Cgreen(%cr) %Cred%h%Creset -%C(yellow)%d%Creset %C(bold blue)<%ae>%Creset %s' --abbrev-commit
 [diff]
-	tool = vscode
+	tool = vimdiff
 	compactionHeuristic = true
 [difftool "vscode"]
 	cmd = code --wait --diff $LOCAL $REMOTE
