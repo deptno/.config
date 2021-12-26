@@ -11,6 +11,11 @@ if [[ -z "$TMUX" ]]; then
   if [[ ! -d ~/.tmux/plugins/tpm ]]; then
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   fi
+
+  if [[ ! -z "$SSH_CONNECTION" ]]; then
+    tmux attach -t default || tmux new -s default
+    exit
+  fi
 else 
   export ANDROID_HOME=$HOME/Library/Android/sdk
   export PATH=$PATH:$ANDROID_HOME/emulator
