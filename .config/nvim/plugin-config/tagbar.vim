@@ -7,30 +7,29 @@ set tags+=~/workspace/src/github.com/deptno/deptno.github.io.wiki
 set tags+=~/workspace/src/github.com/deptno/wiki
 
 let g:tagbar_type_vimwiki = {
-        \ 'ctagstype' : 'markdown',
-				\ 'kinds'     : [
-				\     'c:h1:0:0',
-				\     's:h2:0:0',
-				\     'S:h3:0:0',
-				\     't:h4:0:0',
-				\     'T:h5:0:0',
-				\     'u:h6:0:0',
-				\ ],
-				\ 'sro'        : '::',
-				\ 'kind2scope' : {
-				\     'a' : 'h1',
-				\     'b' : 'h2',
-				\     'c' : 'h3',
-				\     'd' : 'h4',
-				\     'e' : 'h5',
-				\     'f' : 'h6',
-				\ },
-				\ 'scope2kind' : {
-				\     'h1' : 'a',
-				\     'h2' : 'b',
-				\     'h3' : 'c',
-				\     'h4' : 'd',
-				\     'h5' : 'e',
-				\     'h6' : 'f',
-				\}
-				\}
+  \ 'ctagstype'	: 'markdown',
+  \ 'kinds'		: [
+    \ 'c:.1:0:0',
+    \ 's:.2:0:1',
+    \ 'S:.3:0:1',
+    \ 't:.4:0:1',
+    \ 'T:.5:0:1',
+    \ 'u:.6:0:1',
+  \ ],
+  \ 'sro'			: '""',
+  \ 'kind2scope'	: {
+    \ 'c' : 'chapter',
+    \ 's' : 'section',
+    \ 'S' : 'subsection',
+    \ 't' : 'subsubsection',
+    \ 'T' : 'l4subsection',
+  \ },
+  \ 'scope2kind'	: {
+    \ 'chapter' : 'c',
+    \ 'section' : 's',
+    \ 'subsection' : 'S',
+    \ 'subsubsection' : 't',
+    \ 'l4subsection' : 'T',
+  \ },
+  \ 'sort': 0,
+\ }
