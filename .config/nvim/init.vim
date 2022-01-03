@@ -135,6 +135,7 @@ set exrc
 " insert timestamp
 nnoremap ;d a<space><space><esc>"=strftime("%Y-%m-%d %T")<cr>P
 nnoremap ;dd a<space><space><esc>"=strftime("%Y-%m-%d")<cr>P
+nnoremap tt :tabnew<cr>
 
 iab <expr> #tomorrow; strftime("%Y-%m-%d", localtime() + 24*3600)
 iab <expr> #yesterday; strftime("%Y-%m-%d", localtime() + 24*3600)
