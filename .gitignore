@@ -5,3 +5,4 @@
 !.config/alacritty/**/*
 !.task*
 !.finicky.js
+!.ruby-version
