@@ -1,2 +1,5 @@
 # c#
 export MONO_IOMAP="all"
+
+alias grep-apt="GREP_COLOR='35;47' grep --color=always -Ei 'jinyoung|yjoh|jiyoung|pdj|woong|deptno|estrellajiyoungkim|$'"
+alias grep-apt-only="GREP_COLOR='35;47' grep --color=always -Ei 'jinyoung|yjoh|jiyoung|pdj|woong|deptno|estrellajiyoungkim'"
