@@ -93,10 +93,11 @@ plugins=(
   bundler
   dotenv
   macos
-  rake
-  rbenv
   ruby
   z
+  urltools
+  rust
+  node
 )
 
 source $ZSH/oh-my-zsh.sh
