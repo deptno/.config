@@ -33,3 +33,5 @@ let g:tagbar_type_vimwiki = {
   \ },
   \ 'sort': 0,
 \ }
+
+nmap ;1 :TagbarToggle<cr>
