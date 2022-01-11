@@ -19,6 +19,6 @@ require('telescope').setup{
   }
 }
 --- vimwiki
-require('telescope').load_extension('vimwiki')
-require('telescope').load_extension('vw')
+-- require('telescope').load_extension('vimwiki')
+-- require('telescope').load_extension('vw')
 EOF
