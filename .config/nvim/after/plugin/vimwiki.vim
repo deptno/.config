@@ -35,3 +35,5 @@ autocmd FileType vimwiki nmap <S-x> <Plug>VimwikiToggleListItemj
 
 set path+=~/workspace/src/github.com/deptno/deptno.github.io.wiki
 set path+=~/workspace/src/github.com/deptno/wiki
+
+set syntax=markdown
