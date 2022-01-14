@@ -8,6 +8,7 @@ scriptencoding utf-8
 " stop loading config if it's on tiny or small
 if !1 | finish | endif
 
+set completeopt=menuone,noselect
 set nocompatible
 set number
 syntax enable
@@ -26,6 +27,7 @@ set expandtab
 "let loaded_matchparen = 1
 set shell=zsh
 set backupskip=/tmp/*,/private/tmp/*
+set mouse=n
 
 " incremental substitution (neovim)
 if has('nvim')
@@ -136,6 +138,7 @@ set exrc
 nnoremap ;d a<space><space><esc>"=strftime("%Y-%m-%d %T")<cr>P
 nnoremap ;dd a<space><space><esc>"=strftime("%Y-%m-%d")<cr>P
 nnoremap tt :tabnew<cr>
+nnoremap <silent> cd :cd %:h<cr>
 
 iab <expr> #tomorrow; strftime("%Y-%m-%d", localtime() + 24*3600)
 iab <expr> #yesterday; strftime("%Y-%m-%d", localtime() + 24*3600)
