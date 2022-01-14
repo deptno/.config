@@ -2,6 +2,11 @@
 [user]
 	name = deptno
 	email = deptno@gmail.com
+	signingkey = 770E7F433A7BEBC20AC6712FA20921D2906CB572
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore_global

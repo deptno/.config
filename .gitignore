@@ -1,4 +1,4 @@
-**/*
+/*
 !.gitignore*
 !.gitconfig*
 !.config/nvim/*
@@ -6,3 +6,4 @@
 !.task*
 !.finicky.js
 !.ruby-version
+!.config/nvim/**/*
