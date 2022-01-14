@@ -1,108 +1,101 @@
-if has("nvim")
-  let g:plug_home = stdpath('data') . '/plugged'
-endif
-
-call plug#begin()
-
-" theme
-Plug 'arcticicestudio/nord-vim'
-Plug 'dracula/vim'
-
-" git
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
-
-" edit
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-Plug 'cohama/lexima.vim'
-
-" visual
-Plug 'frazrepo/vim-rainbow'
-Plug 'itchyny/vim-cursorword'
-
-" wiki
-Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
-
-" ui
-Plug 'voldikss/vim-floaterm'
-
-" manage
-Plug 'mhinz/vim-startify'
-
-" ux
-Plug 'preservim/tagbar'
-
-" util
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'itchyny/vim-gitbranch'
-
-
-" Plug 'tools-life/taskwiki'
-
-if has("nvim")
-  " font
-  Plug 'kyazdani42/nvim-web-devicons'
-  Plug 'yamatsum/nvim-nonicons'
-  Plug 'kristijanhusak/defx-icons' "defx works with neovim
-
-  " statusline
-  Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
-
-  " file explorer
-  Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'kristijanhusak/defx-git'
-
-  " ui
-  Plug 'nvim-lua/popup.nvim'
-  Plug 'nvim-lua/plenary.nvim'
-
-  " TODO: classify
-  Plug 'folke/lsp-colors.nvim'
-  Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
-  Plug 'nvim-telescope/telescope.nvim'
-  Plug 'Yggdroot/indentLine'
-  Plug 'skywind3000/vim-quickui'
-  Plug 'ElPiloto/telescope-vimwiki.nvim'
-  Plug 'github/copilot.vim'
-
-  " snippet
-  Plug 'hrsh7th/vim-vsnip'
-
-  " lsp config
-  Plug 'neovim/nvim-lspconfig'
-
-  " completion
-  Plug 'hrsh7th/nvim-cmp'
-  Plug 'hrsh7th/cmp-nvim-lsp'
-  Plug 'hrsh7th/cmp-vsnip'
-  Plug 'hrsh7th/cmp-path'
-  Plug 'hrsh7th/cmp-buffer'
-  " Plug 'glepnir/lspsaga.nvim'
-
-  " rust
-  Plug 'rust-lang/rust.vim'
-  Plug 'simrat39/rust-tools.nvim'
-endif
-
-call plug#end()
-
+"     if has("nvim")
+"       let g:plug_home = stdpath('data') . '/plugged'
+"     endif
+"     
+     "call plug#begin()
+"     
+"     " theme
+"     Plug 'arcticicestudio/nord-vim'
+     "Plug 'dracula/vim'
+"     
+"     " git
+     "Plug 'tpope/vim-fugitive'
+     "Plug 'tpope/vim-rhubarb'
+"     
+"     " edit
+     "Plug 'tpope/vim-surround'
+     "Plug 'tpope/vim-unimpaired'
+"     Plug 'cohama/lexima.vim'
+"     
+"     " visual
+"     Plug 'frazrepo/vim-rainbow'
+"     Plug 'itchyny/vim-cursorword'
+"     
+"     " wiki
+     "Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
+"     
+"     " ui
+"     Plug 'voldikss/vim-floaterm'
+"     
+"     " manage
+     "Plug 'mhinz/vim-startify'
+"     
+"     " ux
+     "Plug 'preservim/tagbar'
+"     
+"     " util
+"     Plug 'ludovicchabant/vim-gutentags'
+"     Plug 'itchyny/vim-gitbranch'
+"     
+"     
+"     " Plug 'tools-life/taskwiki'
+"     
+     "if has("nvim")
+"       " font
+       "Plug 'kyazdani42/nvim-web-devicons'
+       "Plug 'yamatsum/nvim-nonicons'
+       "Plug 'kristijanhusak/defx-icons' "defx works with neovim
+"     
+"       " statusline
+       "Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+"     
+"       " file explorer
+       "Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+       "Plug 'kristijanhusak/defx-git'
+"     
+"       " ui
+"       Plug 'nvim-lua/popup.nvim'
+"       Plug 'nvim-lua/plenary.nvim'
+"     
+"       " TODO: classify
+"       Plug 'folke/lsp-colors.nvim'
+"       Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+"       Plug 'nvim-telescope/telescope.nvim'
+"       Plug 'Yggdroot/indentLine'
+"       Plug 'skywind3000/vim-quickui'
+"       Plug 'ElPiloto/telescope-vimwiki.nvim'
+"       Plug 'github/copilot.vim'
+"     
+"       " snippet
+"       Plug 'hrsh7th/vim-vsnip'
+"     
+"       " lsp config
+       "Plug 'neovim/nvim-lspconfig'
+"     
+"       " completion
+       "Plug 'hrsh7th/nvim-cmp'
+"       Plug 'hrsh7th/cmp-nvim-lsp'
+"       Plug 'hrsh7th/cmp-vsnip'
+"       Plug 'hrsh7th/cmp-path'
+"       Plug 'hrsh7th/cmp-buffer'
+"       " Plug 'glepnir/lspsaga.nvim'
+"     
+"       " rust
+       "Plug 'rust-lang/rust.vim'
+       "Plug 'simrat39/rust-tools.nvim'
+     "endif
+"     
+     "call plug#end()
+     
 if has("unix")
   let s:uname = system("uname -s")
-  " Do Mac stuff
   if s:uname == "Darwin\n"
-    runtime ./macos.vim
+   runtime ./macos.vim
   endif
 endif
 
-runtime! plugin-config/*.vim
-runtime! plugin-config/*.lua
-
-
-
-
-
-
+runtime! after/plugin/*.vim
+runtime! after/plugin/*.lua
 
 " Set completeopt to have a better completion experience
 " :help completeopt
@@ -186,8 +179,8 @@ set signcolumn=yes
 " 300ms of no cursor movement to trigger CursorHold
 set updatetime=300
 " Show diagnostic popup on cursor hover
-autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
+autocmd CursorHold * lua vim.diagnostic.open_float()
 
 " Goto previous/next diagnostic warning/error
-nnoremap <silent> g[ <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
-nnoremap <silent> g] <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <silent> g[ <cmd>lua vim.diagnostic.goto_prev()<CR>
+nnoremap <silent> g] <cmd>lua vim.diagnostic.goto_next()<CR>
