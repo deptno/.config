@@ -12,11 +12,17 @@ if [[ -z "$TMUX" ]]; then
   fi
   
   if [[ ! -d ~/.tmux/plugins/tpm ]]; then
-    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    git clone --depth=1 https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   fi
+
+  if [[ ! -f ~/.oh-my-zsh/themes/zsh-syntax-highlighting.sh ]]; then
+    curl https://raw.githubusercontent.com/dracula/zsh-syntax-highlighting/master/zsh-syntax-highlighting.sh -sSo ~/.oh-my-zsh/themes/zsh-syntax-highlighting.sh
+  fi
+  source ~/.oh-my-zsh/themes/zsh-syntax-highlighting.sh
 
   if [[ ! -z "$SSH_CONNECTION" ]]; then
     tmux attach -t default || tmux new -s default
     exit
   fi
 fi
+fpath+=${ZDOTDIR:-~}/.zsh_functions

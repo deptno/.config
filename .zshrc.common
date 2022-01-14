@@ -89,6 +89,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
   git
   zsh-autosuggestions
+  zsh-syntax-highlighting
   git
   bundler
   dotenv
@@ -148,3 +149,5 @@ setopt EXTENDED_HISTORY
 # chruby
 source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+
+export GEM_HOME=~/.gem/ruby/2.6.8
