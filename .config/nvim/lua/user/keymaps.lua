@@ -15,6 +15,7 @@ vim.g.maplocalleader = ";"
 -- Normal --
 keymap("n", "cd", ":cd %:h | pwd<cr>", opts)
 keymap("n", "cd-", ":cd - | pwd<cr>", opts)
+keymap("n", "sw", ":set wrap!<cr>", opts)
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
