@@ -99,6 +99,7 @@ plugins=(
   urltools
   rust
   node
+  direnv
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -151,3 +152,4 @@ source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 source /opt/homebrew/opt/chruby/share/chruby/auto.sh
 
 export GEM_HOME=~/.gem/ruby/2.6.8
+export PATH=$PATH:~/.local/share/nvim/lsp_servers/rust
