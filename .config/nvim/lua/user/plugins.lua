@@ -69,9 +69,11 @@ packer.startup(function(use)
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-copilot',
     },
   }
   use 'github/copilot.vim'
+  use 'windwp/nvim-autopairs'
   -- startup
   use { 'mhinz/vim-startify' }
   -- tagbar

@@ -92,6 +92,7 @@ cmp.setup {
   },
   sources = {
     { name = "nvim_lsp" },
+    { name = "copilot" }, -- @FIXME 동작 안하는듯?
     { name = "buffer" },
     { name = "path" },
   },
