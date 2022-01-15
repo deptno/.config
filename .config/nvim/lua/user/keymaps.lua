@@ -29,6 +29,12 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
+-- Telescope
+keymap("n", ';f', '<cmd>Telescope find_files<cr>', opts)
+keymap("n", ';r', '<cmd>Telescope live_grep<cr>', opts)
+keymap("n", '\\', '<cmd>Telescope buffers<cr>', opts)
+keymap("n", ';t', '<cmd>Telescope<cr>', opts)
+
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
