@@ -13,6 +13,8 @@ vim.g.maplocalleader = ";"
 --   command_mode = "c",
 
 -- Normal --
+keymap("n", "cd", ":cd %:h | pwd<cr>", opts)
+keymap("n", "cd-", ":cd - | pwd<cr>", opts)
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
@@ -31,8 +33,8 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Telescope
 keymap("n", ';f', '<cmd>Telescope find_files<cr>', opts)
-keymap("n", ';r', '<cmd>Telescope live_grep<cr>', opts)
-keymap("n", '\\', '<cmd>Telescope buffers<cr>', opts)
+keymap("n", ';g', '<cmd>Telescope live_grep<cr>', opts)
+keymap("n", ';b', '<cmd>Telescope buffers<cr>', opts)
 keymap("n", ';t', '<cmd>Telescope<cr>', opts)
 
 -- Insert --

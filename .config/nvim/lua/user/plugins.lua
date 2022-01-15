@@ -79,7 +79,10 @@ packer.startup(function(use)
   -- treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   -- telescope
-  use 'nvim-telescope/telescope.nvim'
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = 'ElPiloto/telescope-vimwiki.nvim'
+  }
 
   -- statusline
   -- use {
