@@ -74,6 +74,7 @@ packer.startup(function(use)
   }
   use 'github/copilot.vim'
   use 'windwp/nvim-autopairs'
+  use 'lukas-reineke/indent-blankline.nvim'
   -- startup
   use { 'mhinz/vim-startify' }
   -- tagbar
@@ -87,13 +88,11 @@ packer.startup(function(use)
   }
   -- statusline
   use {
-    'glepnir/galaxyline.nvim',
-    branch = 'main',
+    'nvim-lualine/lualine.nvim',
     requires = {
       'kyazdani42/nvim-web-devicons',
-      'yamatsum/nvim-nonicons',
       opt = true
-    },
+    }
   }
   -- rust
   use {

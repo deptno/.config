@@ -32,6 +32,8 @@ vim.opt.wrap = false
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 vim.opt.guifont = "monospace:h17"
+vim.opt.inccommand = "split"
+
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 -- vim.cmd "set iskeyword+=-"
