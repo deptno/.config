@@ -96,6 +96,7 @@ packer.startup(function(use)
   use {
     'nvim-lualine/lualine.nvim',
     requires = {
+      'arkav/lualine-lsp-progress',
       'kyazdani42/nvim-web-devicons',
       opt = true
     }
