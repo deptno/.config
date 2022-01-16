@@ -72,6 +72,10 @@ packer.startup(function(use)
       'hrsh7th/cmp-copilot',
     },
   }
+  use {
+    'weilbith/nvim-code-action-menu',
+    cmd = 'CodeActionMenu',
+  }
   use 'github/copilot.vim'
   use 'windwp/nvim-autopairs'
   -- startup
@@ -87,15 +91,12 @@ packer.startup(function(use)
   }
 
   -- statusline
-  -- use {
-  --   glepnir/galaxyline.nvim',
-  --   branch = 'main',
-  --   requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-  --   config = function()
-  --     require'statusline'
-  --   end,
-  -- }
-
+  use {
+    'glepnir/galaxyline.nvim',
+    branch = 'main',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+  }
+  -- rust
   use {
     'simrat39/rust-tools.nvim',
     config = function()

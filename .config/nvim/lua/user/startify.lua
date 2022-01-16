@@ -31,6 +31,7 @@ let g:startify_bookmarks = [
       \ '~/.gitconfig',
       \ '~/.gitignore',
       \ '~/.gitignore_global',
+      \ '~/.local/share/nvim/site/pack/packer',
       \ ]
 
 function! GetUniqueSessionName()
