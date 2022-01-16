@@ -72,13 +72,19 @@ packer.startup(function(use)
     'weilbith/nvim-code-action-menu',
     cmd = 'CodeActionMenu',
   }
-  use 'github/copilot.vim'
-  use 'windwp/nvim-autopairs'
-  use 'lukas-reineke/indent-blankline.nvim'
   use {
     'numToStr/Comment.nvim',
     config = function()
       require('Comment').setup()
+    end
+  }
+  use 'github/copilot.vim'
+  use 'windwp/nvim-autopairs'
+  use 'lukas-reineke/indent-blankline.nvim'
+  use {
+    'editorconfig/editorconfig-vim',
+    config = function()
+      vim.g.EditorConfig_exclude_patterns = { 'fugitive://.*', 'scp://.*' }
     end
   }
   -- startup
