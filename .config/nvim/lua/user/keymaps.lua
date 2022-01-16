@@ -12,10 +12,17 @@ vim.g.maplocalleader = ";"
 --   term_mode = "t",
 --   command_mode = "c",
 
+  
+  
+  
+  
 -- Normal --
 keymap("n", "cd", ":cd %:h | pwd<cr>", opts)
 keymap("n", "cd-", ":cd - | pwd<cr>", opts)
 keymap("n", "sw", ":set wrap!<cr>", opts)
+keymap("n", ";d", 'a<space><space><esc>"=strftime("%Y-%m-%d %T")<cr>P', opts)
+keymap("n", ";dd", 'a<space><space><esc>"=strftime("%Y-%m-%d")<cr>P', opts)
+keymap("n", "tt", "tabnew<cr>", opts)
 -- nvim-tree
 keymap("n", "sf",     ":NvimTreeToggle<CR>", opts)
 keymap("n", "<leader>r", ":NvimTreeRefresh<CR>", opts)
