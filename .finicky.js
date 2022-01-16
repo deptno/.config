@@ -1,5 +1,8 @@
 module.exports = {
   defaultBrowser: "Safari",      
+  options: {
+    logRequests: true,
+  },
   handlers: [
     {
       match: /zigbang/,
@@ -35,7 +38,7 @@ module.exports = {
         const payload = parseJwt(queries.login_hint)
 
         if (payload) {
-          const { iss, sub } = payload
+          const { iss } = payload
 
           if (iss === 'https://slack.com') {
             return payload['https://slack.com/team_id'] === 'T06BALYG5'
@@ -45,7 +48,7 @@ module.exports = {
       },
       browser: "Google Chrome",
     },
-  ]
+  ],
 }
 
 const parseJwt = (token) => {
