@@ -23,6 +23,10 @@ keymap("n", "sw", ":set wrap!<cr>", opts)
 keymap("n", ";d", 'a<space><space><esc>"=strftime("%Y-%m-%d %T")<cr>P', opts)
 keymap("n", ";dd", 'a<space><space><esc>"=strftime("%Y-%m-%d")<cr>P', opts)
 keymap("n", "tt", "tabnew<cr>", opts)
+-- rest
+keymap("n", ";rr", "<plug>RestNvim", {})
+keymap("n", ";rp", "<plug>RestNvimPreview", {})
+keymap("n", ";rl", "<plug>RestNvimLast", {})
 -- nvim-tree
 keymap("n", "sf",     ":NvimTreeToggle<CR>", opts)
 keymap("n", "<leader>r", ":NvimTreeRefresh<CR>", opts)
