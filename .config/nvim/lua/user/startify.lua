@@ -1,3 +1,16 @@
+vim.g.startify_bookmarks = {
+  '~/.zshrc',
+  '~/.tmux.conf',
+  '~/.taskrc',
+  '~/.config/nvim/init.lua',
+  '~/.config/nvim/lua/user/plugins.lua',
+  '~/.gitconfig',
+  '~/.gitignore',
+  '~/.gitignore_global',
+  '~/.local/share/nvim/site/pack/packer',
+  '~/.tmp/rest.http',
+}
+
 vim.cmd [[
 let g:startify_show_help = 1
 let g:startify_show_help_delay = 1
@@ -21,17 +34,6 @@ let g:startify_lists = [
       \ { 'type': function('s:gitModified'),  'header': ['   git modified']},
       \ { 'type': function('s:gitUntracked'), 'header': ['   git untracked']},
       \ { 'type': 'commands',  'header': ['   Commands']       },
-      \ ]
-let g:startify_bookmarks = [
-      \ '~/.zshrc',
-      \ '~/.tmux.conf',
-      \ '~/.taskrc',
-      \ '~/.config/nvim/init.lua',
-      \ '~/.config/nvim/lua/user/plugins.lua',
-      \ '~/.gitconfig',
-      \ '~/.gitignore',
-      \ '~/.gitignore_global',
-      \ '~/.local/share/nvim/site/pack/packer',
       \ ]
 
 function! GetUniqueSessionName()
