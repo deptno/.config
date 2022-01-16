@@ -38,14 +38,10 @@ packer.startup(function(use)
   use "dracula/vim"
   -- file explorer
   use {
-    'Shougo/defx.nvim',
+    'kyazdani42/nvim-tree.lua',
     requires = {
-      'kristijanhusak/defx-icons',
-      'kristijanhusak/defx-git',
       'kyazdani42/nvim-web-devicons',
-      'yamatsum/nvim-nonicons',
     },
-    run = ':UpdateRemotePlugins'
   }
   -- lsp
   use 'neovim/nvim-lspconfig'
@@ -89,12 +85,15 @@ packer.startup(function(use)
     'nvim-telescope/telescope.nvim',
     requires = 'ElPiloto/telescope-vimwiki.nvim'
   }
-
   -- statusline
   use {
     'glepnir/galaxyline.nvim',
     branch = 'main',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    requires = {
+      'kyazdani42/nvim-web-devicons',
+      'yamatsum/nvim-nonicons',
+      opt = true
+    },
   }
   -- rust
   use {
@@ -102,7 +101,6 @@ packer.startup(function(use)
     config = function()
       require('rust-tools').setup({})
     end,
-
   }
 
   if packer_bootstrap then
