@@ -75,6 +75,12 @@ packer.startup(function(use)
   use 'github/copilot.vim'
   use 'windwp/nvim-autopairs'
   use 'lukas-reineke/indent-blankline.nvim'
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
   -- startup
   use { 'mhinz/vim-startify' }
   -- tagbar
