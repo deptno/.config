@@ -9,7 +9,7 @@ vim.g.startify_bookmarks = {
   '~/.gitignore_global',
   '~/.finicky.js',
   '~/.local/share/nvim/site/pack/packer',
-  '~/.tmp/rest.http',
+  '~/tmp/rest.http',
 }
 
 vim.cmd [[
