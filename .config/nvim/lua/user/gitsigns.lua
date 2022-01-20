@@ -12,19 +12,19 @@ gitsigns.setup {
     changedelete = { hl = "GitSignsChange", text = "▎", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
   },
   signcolumn = true,
-  numhl = false,
+  numhl = true,
   linehl = false,
-  word_diff = false,
+  word_diff = true,
   watch_gitdir = {
     interval = 1000,
     follow_files = true,
   },
   attach_to_untracked = true,
-  current_line_blame = false,
+  current_line_blame = true,
   current_line_blame_opts = {
     virt_text = true,
     virt_text_pos = "overlay",
-    delay = 1000,
+    delay = 100,
     ignore_whitespace = false,
   },
   current_line_blame_formatter_opts = {

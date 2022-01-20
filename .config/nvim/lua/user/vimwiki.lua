@@ -1,7 +1,7 @@
 vim.g.vimwiki_auto_chdir = 1
+vim.g.vimwiki_conceallevel = 0
 vim.g.vimwiki_list = {
   {
-
     path = '~/workspace/src/github.com/deptno/deptno.github.io.wiki',
     ext  = '.md',
     diary_rel_path = 'diary',
@@ -24,6 +24,6 @@ augroup vimwiki_keymap
   autocmd FileType vimwiki nnoremap <LocalLeader>wt :VimwikiTable<CR>
   autocmd FileType vimwiki nnoremap gr :execute "VWS /" . expand("<cword>") . "/" <Bar> :lopen<CR>
   autocmd FileType vimwiki nnoremap gk :execute "VWB" <Bar> :lopen<CR>
-  autocmd FileType vimwiki set iskeyword+=-"
+  autocmd BufEnter *.md set syntax=markdown
 augroup end
 ]]

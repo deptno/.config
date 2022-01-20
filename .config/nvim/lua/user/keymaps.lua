@@ -12,10 +12,6 @@ vim.g.maplocalleader = ";"
 --   term_mode = "t",
 --   command_mode = "c",
 
-  
-  
-  
-  
 -- Normal --
 keymap("n", "cd", ":cd %:h | pwd<cr>", opts)
 keymap("n", "cd-", ":cd - | pwd<cr>", opts)
@@ -23,6 +19,7 @@ keymap("n", "sw", ":set wrap!<cr>", opts)
 keymap("n", ";d", 'a<space><space><esc>"=strftime("%Y-%m-%d %T")<cr>P', opts)
 keymap("n", ";dd", 'a<space><space><esc>"=strftime("%Y-%m-%d")<cr>P', opts)
 keymap("n", "tt", "tabnew<cr>", opts)
+keymap("n", ";w", ":setlocal wrap!<cr>", opts)
 -- rest
 keymap("n", ";rr", "<plug>RestNvim", {})
 keymap("n", ";rp", "<plug>RestNvimPreview", {})

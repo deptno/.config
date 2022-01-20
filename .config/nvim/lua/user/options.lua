@@ -36,10 +36,9 @@ vim.opt.inccommand = "split"
 
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
--- vim.cmd "set iskeyword+=-"
+-- vim.cmd "set iskeyword-=-"
 --
 --vim.opt.colorscheme = dracula
-
 vim.cmd [[
 try
   colorscheme dracula
@@ -48,3 +47,6 @@ catch /^Vim\%((\a\+)\)\=:E185/
   set background=dark
 endtry
 ]]
+
+vim.cmd "highlight CursorLine ctermbg=255 guibg=#333333"
+
