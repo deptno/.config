@@ -19,8 +19,7 @@ vim.cmd [[
 augroup vimwiki_keymap
   autocmd!
   autocmd FileType vimwiki nmap <S-x> <Plug>VimwikiToggleListItemj
-"  autocmd FileType vimwiki nnoremap <LocalLeader>wi <Plug>VimwikiDiaryIndex
-"  autocmd FileType vimwiki nnoremap <LocalLeader>w<LocalLeader>w <Plug>VimwikiMakeDiaryNote"
+  autocmd FileType vimwiki nmap <LocalLeader>wn <Plug>VimwikiNextLink
   autocmd FileType vimwiki nnoremap <LocalLeader>wt :VimwikiTable<CR>
   autocmd FileType vimwiki nnoremap gr :execute "VWS /" . expand("<cword>") . "/" <Bar> :lopen<CR>
   autocmd FileType vimwiki nnoremap gk :execute "VWB" <Bar> :lopen<CR>
