@@ -1,5 +1,4 @@
 vim.opt.backup = false
-vim.opt.clipboard = "unnamedplus"
 vim.opt.cmdheight = 1
 vim.opt.completeopt = { "menuone", "noselect" }
 vim.opt.conceallevel = 0
@@ -34,7 +33,7 @@ vim.opt.sidescrolloff = 8
 vim.opt.guifont = "monospace:h17"
 vim.opt.inccommand = "split"
 
-
+vim.cmd "set clipboard^=unnamed,unnamedplus"
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 -- vim.cmd "set iskeyword-=-"
 --
@@ -50,3 +49,7 @@ endtry
 
 vim.cmd "highlight CursorLine ctermbg=255 guibg=#333333"
 
+-- vim.cmd "command Webstorm :!open -a webstorm %:p"
+vim.cmd [[
+command -complete=shellcmd -nargs=1 Open :!open -a <args> %:p
+]]
