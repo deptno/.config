@@ -33,6 +33,14 @@ module.exports = {
       browser: "Google Chrome",
     },
     {
+      match: /^http:\/\/localhost/,
+      browser: "Google Chrome",
+    },
+    {
+      match: /clickup\.com/,
+      browser: "Google Chrome",
+    },
+    {
       match: ({ url }) => {
         const queries = getUrlParams(url.search)
         const payload = parseJwt(queries.login_hint)
