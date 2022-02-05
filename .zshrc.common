@@ -1,8 +1,13 @@
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+if [[ -z $ANDROID_HOME ]]; then
+  export ANDROID_HOME=$HOME/Library/Android/sdk
+  export PATH=$PATH:$ANDROID_HOME/emulator
+  export PATH=$PATH:$ANDROID_HOME/tools
+  export PATH=$PATH:$ANDROID_HOME/tools/bin
+  export PATH=$PATH:$ANDROID_HOME/platform-tools
+  export PATH=$PATH:~/.local/share/nvim/lsp_servers/rust
+fi
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
@@ -14,9 +19,6 @@ export NVM_DIR="$HOME/.nvm"
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"
@@ -147,9 +149,18 @@ export HISTSIZE=1000000000
 export SAVEHIST=1000000000
 setopt EXTENDED_HISTORY
 
-# chruby
-source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-source /opt/homebrew/opt/chruby/share/chruby/auto.sh
-
 export GEM_HOME=~/.gem/ruby/2.6.8
-export PATH=$PATH:~/.local/share/nvim/lsp_servers/rust
+
+function review() {
+  # stash current status
+  branch=@^2
+  if [ ! -z "$1" ]; then
+    branch=$1
+  fi
+  echo "$branch $1"
+  git reset --mixed $(git merge-base @~ $branch)
+  vim $(git diff --name-only --relative)
+  git reset --hard HEAD
+  git clean -fd
+  git pull --rebase
+}

@@ -1,5 +1,6 @@
 source ~/.zshrc.common
 source ~/.zshrc.zigbang
+fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 if [[ -z "$TMUX" ]]; then
   if [[ -d ${XDG_CONFIG_HOME:-$HOME/.config}/nnn/plugins ]]; then
@@ -25,4 +26,3 @@ if [[ -z "$TMUX" ]]; then
     exit
   fi
 fi
-fpath+=${ZDOTDIR:-~}/.zsh_functions
