@@ -41,6 +41,10 @@ module.exports = {
       browser: "Google Chrome",
     },
     {
+      match: /partners\.ceo/,
+      browser: "Google Chrome",
+    },
+    {
       match: ({ url }) => {
         const queries = getUrlParams(url.search)
         const payload = parseJwt(queries.login_hint)
