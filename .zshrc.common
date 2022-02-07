@@ -92,7 +92,6 @@ plugins=(
   git
   zsh-autosuggestions
   zsh-syntax-highlighting
-  git
   bundler
   dotenv
   macos
@@ -102,6 +101,7 @@ plugins=(
   rust
   node
   direnv
+  aws
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -131,6 +131,8 @@ export EDITOR='vim'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 alias k=kubectl
+alias m=neomutt
+alias min="open -a /Applications/Min.app"
 alias ll="exa --long --all --icons --git --time-style=long-iso --color-scale --links --header --sort=mod --reverse --group-directories-first"
 alias w1="cd ~/workspace/src/github.com/deptno/deptno.github.io.wiki/"
 alias w2="cd ~/workspace/src/github.com/deptno/wiki/"
