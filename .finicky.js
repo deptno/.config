@@ -5,6 +5,10 @@ module.exports = {
   },
   handlers: [
     {
+      match: /^file:\/\/\/.*$/,
+      browser: "Min",
+    },
+    {
       match: /zigbang/,
       browser: "Google Chrome",
     },
