@@ -51,8 +51,6 @@ keymap("n", ';b', '<cmd>Telescope buffers<cr>', opts)
 keymap("n", ';t', '<cmd>Telescope<cr>', opts)
 
 -- Insert --
--- Press jk fast to enter
-keymap("i", "jk", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode
