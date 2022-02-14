@@ -136,6 +136,23 @@ alias min="open -a /Applications/Min.app"
 alias ll="exa --long --all --icons --git --time-style=long-iso --color-scale --links --header --sort=mod --reverse --group-directories-first"
 alias w1="cd ~/workspace/src/github.com/deptno/deptno.github.io.wiki/"
 alias w2="cd ~/workspace/src/github.com/deptno/wiki/"
+alias hl-gh="GREP_COLOR='2;37' grep --color=always -E 'true|$' \
+  | GREP_COLOR='2;36;47' grep --color=always -E 'false|$' \
+  | GREP_COLOR='5;31;47' grep --color=always -Ei 'release\/|$' \
+  | GREP_COLOR='1;33;41' grep --color=always -Ei 'prod\/|$' \
+  | GREP_COLOR='2;32' grep --color=always -Ei 'master|$' \
+  | GREP_COLOR='1;34' grep --color=always -E 'MERGEABLE|$' \
+  | GREP_COLOR='2;37' grep --color=always -E 'CONFLICTING|$' \
+  | GREP_COLOR='1;4;34;47' grep --color=always -Ei 'b2c-\d{5}|$' \
+  | GREP_COLOR='1;3;4;33;41' grep --color=always -E 'Revert|$'"
+alias gpl="gh pr list \
+  --json author,baseRefName,comments,number,title,mergeable,createdAt,isDraft,state \
+  --template \
+  '{{tablerow (\"#\"|color \"green\") (\"CREATED_AT\"|color \"cyan\") (\"DRAFT\"|color \"magenta\") \"STATE\" \"BASE\" \"MERGEABLE\" \"AUTHOR\" \"TITLE\"}}
+{{range .}}
+{{tablerow .number (timeago .createdAt) .isDraft .state .baseRefName .mergeable .author.login .title}}
+{{end}}'"
+
 if [[ $(uname -s) == "Darwin" ]]; then
   if [[ $(sysctl -n machdep.cpu.brand_string | cut -d ' ' -f1-2) == "Apple M1" ]]; then
     # alias for m1
