@@ -13,7 +13,7 @@
   precomposeUnicode = true
 [alias]
   l = log --color --graph --pretty=format:'%Cgreen(%cr) %Cred%h%Creset -%C(yellow)%d%Creset %C(bold blue)<%aL>%Creset %s' --abbrev-commit
-  la = log --color --graph --pretty=format:'%C(blue)%cr %C(dim magenta)%h%Creset%C(auto)%d%Creset %C(white reverse ul)%aL%Creset %s' --abbrev-commit
+  la = log --color --graph --pretty=format:'%C(blue)%cr %C(dim magenta)%h%Creset%C(auto)%d%Creset %C(black reverse ul)%aL%Creset %s' --abbrev-commit
   ld = log --color --graph --simplify-by-decoration --pretty=format:'%C(blue)%cr %C(dim white)%h%Creset%C(auto)%d%Creset %C(green ul italic)%aL%Creset %s' --abbrev-commit
 [diff]
 	tool = vimdiff
