@@ -1,3 +1,12 @@
+const COMPANY = {
+  name: "Google Chrome",
+  profile: "Profile 3"
+}
+const ZEPLIN_FE = {
+  name: "Google Chrome",
+  profile: "Profile 1"
+}
+
 module.exports = {
   defaultBrowser: "Safari",      
   options: {
@@ -10,43 +19,47 @@ module.exports = {
     },
     {
       match: /zigbang/,
-      browser: "Google Chrome",
+      browser: COMPANY,
     },
     {
       match: /^https:\/\/meet\.google\.com\/.*$/,
-      browser: "Google Chrome",
+      browser: COMPANY,
     },
     {
       match: /^https:\/\/docs\.google\.com\/.*$/,
-      browser: "Google Chrome",
+      browser: COMPANY,
     },
     {
       match: /^https:\/\/console\.firebase\.google\.com\/.*$/,
-      browser: "Google Chrome",
+      browser: COMPANY,
     },
     {
       match: /^https:\/\/appstoreconnect\.apple\.com.*/,
-      browser: "Google Chrome",
+      browser: COMPANY,
     },
     {
       match: /^https:\/\/developer\.apple\.com.*/,
-      browser: "Google Chrome",
+      browser: COMPANY,
     },
     {
       match: /^https:\/\/app\.zeplin\.io.*/,
-      browser: "Google Chrome",
+      browser: COMPANY,
     },
     {
       match: /^http:\/\/localhost/,
-      browser: "Google Chrome",
+      browser: COMPANY,
     },
     {
       match: /clickup\.com/,
-      browser: "Google Chrome",
+      browser: COMPANY,
     },
     {
       match: /partners\.ceo/,
-      browser: "Google Chrome",
+      browser: COMPANY,
+    },
+    {
+      match: /https:\/\/zpl.io/,
+      browser: ZEPLIN_FE,
     },
     {
       match: ({ url }) => {
@@ -62,7 +75,7 @@ module.exports = {
         }
         return false
       },
-      browser: "Google Chrome",
+      browser: COMPANY,
     },
   ],
 }
