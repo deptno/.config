@@ -1,8 +1,8 @@
 [user]
 	name = 이봉
 	email = deptno@zigbang.com
+	signingkey = F47AD69B3F7B7AED89008B097FE6FBA35FB39545
 [core]
 	sshCommand = ssh -i ~/.ssh/id_ed25519.zb
 [url "git@github.com:zigbang"]
 	insteadOf = https://github.com/zigbang
-
