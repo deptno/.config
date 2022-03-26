@@ -1,3 +1,5 @@
+export XDG_CONFIG_HOME="$HOME/.config"
+
 source ~/.zshrc.common
 source ~/.zshrc.zigbang
 fpath+=${ZDOTDIR:-~}/.zsh_functions
@@ -29,3 +31,4 @@ fi
 
 # Added by serverless binary installer
 export PATH="$HOME/.serverless/bin:$PATH"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
