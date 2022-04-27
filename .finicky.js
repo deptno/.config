@@ -34,6 +34,10 @@ module.exports = {
       browser: COMPANY,
     },
     {
+      match: /^https:\/\/console\.cloud\.google\.com\/.*$/,
+      browser: COMPANY,
+    },
+    {
       match: /^https:\/\/appstoreconnect\.apple\.com.*/,
       browser: COMPANY,
     },
@@ -55,6 +59,10 @@ module.exports = {
     },
     {
       match: /partners\.ceo/,
+      browser: COMPANY,
+    },
+    {
+      match: /appsflyer\.com/,
       browser: COMPANY,
     },
     {
