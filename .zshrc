@@ -32,3 +32,6 @@ fi
 # Added by serverless binary installer
 export PATH="$HOME/.serverless/bin:$PATH"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
