@@ -17,6 +17,7 @@
   la = log --color --graph --pretty=format:'%C(blue)%cr %C(dim magenta)%h%Creset%C(auto)%d%Creset %C(black reverse ul)%aL%Creset %s' --abbrev-commit
   ba = bisect visualize --color --pretty=format:'%C(blue)%cr %C(dim magenta)%h%Creset%C(auto)%d%Creset %C(black reverse ul)%aL%Creset %s' --abbrev-commit
   ld = log --color --graph --simplify-by-decoration --pretty=format:'%C(blue)%cr %C(dim white)%h%Creset%C(auto)%d%Creset %C(green ul italic)%aL%Creset %s' --abbrev-commit
+  dt = difftool
 [diff]
 	tool = difft
 	compactionHeuristic = true
