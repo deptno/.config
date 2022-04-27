@@ -1,8 +1,8 @@
 vim.cmd [[
-augroup tagbar_vimwiki
-  autocmd BufRead,BufNewFile *.md TagbarOpen
-  autocmd VimLeavePre *.md TagbarClose
-augroup END
+" augroup tagbar_vimwiki
+"   autocmd BufRead,BufNewFile *.md TagbarOpen
+"   autocmd VimLeavePre *.md TagbarClose
+" augroup END
 
 set tags+=~/workspace/src/github.com/deptno/deptno.github.io.wiki
 set tags+=~/workspace/src/github.com/deptno/wiki
