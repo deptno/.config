@@ -3,24 +3,30 @@ export MONO_IOMAP="all"
 
 alias zm="neomutt -F ~/.config/neomutt/zb.muttrc"
 
-alias hl-0="GREP_COLOR='1;4;31' grep --color=always -Ei 'dong-ho-lee|dongho.lee|$'"
-alias hl-1="GREP_COLOR='1;4;35' grep --color=always -Ei 'jiyoungkim|estrellajiyoungkim|$'"
-alias hl-2="GREP_COLOR='1;4;33' grep --color=always -Ei 'yjoh|yjoh-zigbang|$'"
-alias hl-3="GREP_COLOR='1;4;32' grep --color=always -Ei 'jinwoong-hwang|woong|$'"
-alias hl-4="GREP_COLOR='1;4;36' grep --color=always -Ei 'jinyoung|jinyoung73|$'"
-alias hl-5="GREP_COLOR='1;4;34' grep --color=always -Ei 'jominji|mjjo|$'"
-alias hl-apt="hl-0 | hl-1 | hl-2 | hl-3 | hl-4 | hl-5"
+alias hl-1="GREP_COLOR='1;4;31' grep --color=always -Ei 'dong-ho-lee|dongho.lee|$'"
+alias hl-2="GREP_COLOR='1;4;32' grep --color=always -Ei 'jinwoong-hwang|woong|$'"
+alias hl-3="GREP_COLOR='1;4;33' grep --color=always -Ei 'yjoh|yjoh-zigbang|$'"
+alias hl-4="GREP_COLOR='1;4;34' grep --color=always -Ei 'jominji|mjjo|$'"
+alias hl-5="GREP_COLOR='1;4;35' grep --color=always -Ei 'jiyoungkim|estrellajiyoungkim|$'"
+alias hl-6="GREP_COLOR='1;4;36' grep --color=always -Ei 'jinyoung|jinyoung73|$'"
+alias hl-7="GREP_COLOR='1;4;37' grep --color=always -Ei 'jhso|jhso-dev|$'"
+alias hl-apt="hl-1 | hl-2 | hl-3 | hl-4 | hl-5 | hl-6 | hl-7"
 alias hl-zb="hl-apt | hl-gh"
 alias zit="git $@ | hl-zb | less"
 alias zzz=! "git $1"
 
 function gplz() {
-  gpl "$@" | sed '/^$/d' | hl-zb;
+  gpl "$@" \
+  | sed '/^$/d' \
+  | sed 's/[^@]COMMENTED/💬/g' \
+  | sed 's/[^@]APPROVED/👍/g' \
+  | sed 's/[^@]REQUEST_CHANGES/👎/g' \
+  | hl-zb;
 }
 function gplza() {
   echo 'zigbang/zigbang-client' | GREP_COLOR='1;34;47' grep -E '\S+'; gplz "$@" -R zigbang/zigbang-client; \
   echo 'zigbang/partners-client'| GREP_COLOR='1;34;47' grep -E '\S+'; gplz "$@" -R zigbang/partners-client; \
-  echo 'zigbang/partners-admin'| GREP_COLOR='1;34;47' grep -E '\S+'; gplz "$@" -R zigbang/partners-admin; \
+  echo 'zigbang/partners-admin' | GREP_COLOR='1;34;47' grep -E '\S+'; gplz "$@" -R zigbang/partners-admin; \
   echo 'zigbang/single-page'    | GREP_COLOR='1;34;47' grep -E '\S+'; gplz "$@" -R zigbang/single-page;
 }
 function gz() {
