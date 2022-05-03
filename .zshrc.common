@@ -142,9 +142,9 @@ alias hl-gh="GREP_COLOR='2;37' grep --color=always -E 'true|$' \
   | GREP_COLOR='2;36;47' grep --color=always -E 'false|$' \
   | GREP_COLOR='5;31;47' grep --color=always -Ei 'release\/|$' \
   | GREP_COLOR='1;33;41' grep --color=always -Ei 'prod\/|$' \
-  | GREP_COLOR='2;32' grep --color=always -Ei 'master|$' \
+  | GREP_COLOR='2;32' grep --color=always -Ei 'master|APPROVED|$' \
   | GREP_COLOR='1;34' grep --color=always -E 'MERGEABLE|$' \
-  | GREP_COLOR='2;37' grep --color=always -E 'UNKNOWN|MERGED|CONFLICTING|$' \
+  | GREP_COLOR='2;37' grep --color=always -E 'UNKNOWN|MERGED|CONFLICTING|REVIEW_REQUIRED|$' \
   | GREP_COLOR='36' grep --color=always -Ei 'b2c-\d{5}|$' \
   | GREP_COLOR='1;3;4;33;41' grep --color=always -E 'Revert|$' \
   | GREP_COLOR='1;3;4;30;42' grep --color=always -E 'refs\/bisect\/good|$' \
