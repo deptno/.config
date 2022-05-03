@@ -153,12 +153,41 @@ alias hl-gh="GREP_COLOR='2;37' grep --color=always -E 'true|$' \
 alias gpl="gh pr list \
   --json author,baseRefName,comments,number,title,mergeable,createdAt,isDraft,state,reviewDecision,latestReviews \
   --template \
-  '{{tablerow (\"#\"|color \"magenta\") (\"CREATED_AT\"|color \"magenta\") (\"STATE\"|color \"magenta\") (\"BASE\"|color \"magenta\") (\"CONFLICT\"|color \"magenta\") (\"AUTHOR\"|color \"magenta\") (\"TITLE\"|color \"magenta\") (\"DRAFT\"|color \"magenta\") (\"REVIEW_DECISION\"|color \"magenta\") (\"LATEST_REVIEWS\"|color \"magenta\") }}
+  '{{tablerow
+  (\"#\"|color \"magenta\")
+  (\"CREATED_AT\"|color \"magenta\")
+  (\"STATE\"|color \"magenta\")
+  (\"BASE\"|color \"magenta\")
+  (\"CONFLICT\"|color \"magenta\")
+  (\"AUTHOR\"|color \"magenta\")
+  (\"DRAFT\"|color \"magenta\")
+  (\"TITLE\"|color \"magenta\")
+  (\"@REVIEW_DECISION\"|color \"magenta\")
+  (\"LATEST_REVIEWS\"|color \"magenta\")
+  (\"STATE\"|color \"magenta\")
+}}
 {{range .}}
-{{tablerow .number (timeago .createdAt) .state .baseRefName .mergeable .author.login .title .isDraft .reviewDecision (join \",\" (pluck \"login\" (pluck \"author\" .latestReviews))) }}
+{{tablerow
+  .number
+  (timeago .createdAt)
+  .state
+  .baseRefName
+  .mergeable
+  .author.login
+  .isDraft
+  .title
+  (printf \"@%v\" .reviewDecision)
+  (printf \"%v\" (join \",\" (pluck \"login\" (pluck \"author\" .latestReviews))))
+  (printf \"%v\" (join \" \" (pluck \"state\" .latestReviews)))
+}}
 {{end}}'"
 function gpld() {
-  gpl "$@" | sed '/^$/d' | hl-gh;
+  gpl "$@" \
+  | sed '/^$/d' \
+  | sed 's/[^@]COMMENTED/💬/g' \
+  | sed 's/[^@]APPROVED/👍/g' \
+  | sed 's/[^@]REQUEST_CHANGES/👎/g' \
+  | hl-gh;
 }
 
 if [[ $(uname -s) == "Darwin" ]]; then
