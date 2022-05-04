@@ -84,7 +84,6 @@ nvimtree.setup {
     height = 30,
     hide_root_folder = false,
     side = 'left',
-    auto_resize = false,
     mappings = {
      custom_only = false,
       list = list,
@@ -96,5 +95,10 @@ nvimtree.setup {
   trash = {
     cmd = "trash",
     require_confirm = true
+  },
+  actions = {
+    open_file = {
+      resize_window = false,
+    }
   }
 }
