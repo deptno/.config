@@ -16,12 +16,7 @@ alias zit="git $@ | hl-zb | less"
 alias zzz=! "git $1"
 
 function gplz() {
-  gpl "$@" \
-  | sed '/^$/d' \
-  | sed 's/[^@]COMMENTED/💬/g' \
-  | sed 's/[^@]APPROVED/👍/g' \
-  | sed 's/[^@]REQUEST_CHANGES/👎/g' \
-  | hl-zb;
+  gpld "$@" | hl-zb;
 }
 function gplza() {
   echo 'zigbang/zigbang-client' | GREP_COLOR='1;34;47' grep -E '\S+'; gplz "$@" -R zigbang/zigbang-client; \

@@ -151,13 +151,14 @@ alias hl-gh="GREP_COLOR='2;37' grep --color=always -E 'true|$' \
   | GREP_COLOR='1;3;4;31;43' grep --color=always -E 'refs\/bisect\/bad|$' \
   | GREP_COLOR='1;30;47' grep --color=always -Ei 'deptno|deptno-zb|$'"
 alias gpl="gh pr list \
-  --json author,baseRefName,comments,number,title,mergeable,createdAt,isDraft,state,reviewDecision,latestReviews \
+  --json author,headRefName,baseRefName,comments,number,title,mergeable,createdAt,isDraft,state,reviewDecision,latestReviews \
   --template \
   '{{tablerow
   (\"#\"|color \"magenta\")
   (\"CREATED_AT\"|color \"magenta\")
   (\"STATE\"|color \"magenta\")
   (\"BASE\"|color \"magenta\")
+  (\"HEAD\"|color \"magenta\")
   (\"CONFLICT\"|color \"magenta\")
   (\"AUTHOR\"|color \"magenta\")
   (\"DRAFT\"|color \"magenta\")
@@ -172,6 +173,7 @@ alias gpl="gh pr list \
   (timeago .createdAt)
   .state
   .baseRefName
+  (printf \"👈 %v\" .headRefName)
   .mergeable
   .author.login
   .isDraft
@@ -186,7 +188,7 @@ function gpld() {
   | sed '/^$/d' \
   | sed 's/[^@]COMMENTED/💬/g' \
   | sed 's/[^@]APPROVED/👍/g' \
-  | sed 's/[^@]REQUEST_CHANGES/👎/g' \
+  | sed 's/[^@]CHANGES_REQUESTED/👎/g' \
   | hl-gh;
 }
 
