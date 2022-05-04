@@ -92,8 +92,9 @@ cmp.setup {
   },
   sources = {
     { name = "nvim_lsp" },
-    { name = "copilot" }, -- @FIXME 동작 안하는듯?
+    { name = "copilot" },
     { name = "buffer" },
+    { name = "orgmode" },
     { name = "path" },
   },
   confirm_opts = {

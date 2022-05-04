@@ -134,6 +134,16 @@ packer.startup(function(use)
   use { 'preservim/tagbar' }
   -- treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  -- orgmode
+  require('orgmode').setup_ts_grammar()
+  use {
+    'nvim-orgmode/orgmode', config = function()
+      require('orgmode').setup{
+        org_agenda_files = {'~/workspace/src/github.com/deptno/org/*'},
+        org_default_notes_file = '~/workspace/src/github.com/deptno/org/refile.org',
+      }
+    end
+  }
   -- telescope
   use {
     'nvim-telescope/telescope.nvim',
