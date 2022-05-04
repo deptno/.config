@@ -12,8 +12,8 @@ configs.setup {
   },
   highlight = {
     enable = true,
-    disable = { "" },
-    additional_vim_regex_highlighting = false,
+    disable = { "org" },
+    additional_vim_regex_highlighting = { "org" },
   },
   context_commentstring = {
     enable = true,
