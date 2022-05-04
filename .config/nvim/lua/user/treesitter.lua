@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 configs.setup {
-  ensure_installed = "maintained",
+  ensure_installed = "all",
   sync_install = false,
   ignore_install = { "" },
   autopairs = {
@@ -13,7 +13,7 @@ configs.setup {
   highlight = {
     enable = true,
     disable = { "" },
-    additional_vim_regex_highlighting = true,
+    additional_vim_regex_highlighting = false,
   },
   context_commentstring = {
     enable = true,
