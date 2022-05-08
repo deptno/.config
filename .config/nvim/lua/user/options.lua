@@ -56,3 +56,12 @@ vim.cmd "highlight CursorLine ctermbg=255 guibg=#333333"
 vim.cmd [[
 command -complete=shellcmd -nargs=1 Open :!open -a <args> %:p
 ]]
+
+-- fix: workaround `Vim:E117: Unknown function: netrw#CheckIfRemote`
+-- https://github.com/tpope/vim-fugitive/issues/594#issuecomment-75315088
+vim.cmd [[
+if !exists('g:loaded_netrw')
+  runtime! autoload/netrw.vim
+endif
+]]
+
