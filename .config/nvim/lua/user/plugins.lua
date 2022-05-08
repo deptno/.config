@@ -174,6 +174,16 @@ packer.startup(function(use)
       opt = true
     }
   }
+  use {
+    'danilamihailov/beacon.nvim',
+    config = function()
+      vim.cmd [[
+let g:beacon_size = 60
+let g:beacon_shrink = 0
+let g:beacon_timeout = 2000
+      ]]
+    end
+  }
   -- rest
   use {
     "NTBBloodbath/rest.nvim",
