@@ -146,6 +146,10 @@ packer.startup(function(use)
       }
     end
   }
+  use {
+    "michaelb/sniprun",
+    run = "bash install.sh",
+  }
   -- telescope
   use {
     'nvim-telescope/telescope.nvim',
