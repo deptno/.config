@@ -1,7 +1,6 @@
-/*
+*
 !.gitignore*
 !.gitconfig*
-!.config/nvim/*
 !.config/alacritty/**/*
 !.task*
 !.finicky.js
