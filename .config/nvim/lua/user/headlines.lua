@@ -27,8 +27,8 @@ require("headlines").setup {
         fat_headlines = true,
     },
     vimwiki = {
-        source_pattern_start = "^{{{%a+",
-        source_pattern_end = "^}}}$",
+        source_pattern_start = "^```",
+        source_pattern_end = "^```$",
         dash_pattern = "^---+$",
         headline_pattern = "^=+",
         headline_highlights = { "Headline" },
