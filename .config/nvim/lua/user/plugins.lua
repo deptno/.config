@@ -136,11 +136,13 @@ packer.startup(function(use)
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   -- orgmode
   require('orgmode').setup_ts_grammar()
+  use { 'nvim-orgmode/orgmode' }
+  use { 'lukas-reineke/headlines.nvim' }
   use {
-    'nvim-orgmode/orgmode', config = function()
-      require('orgmode').setup{
-        org_agenda_files = {'~/workspace/src/github.com/deptno/org/*'},
-        org_default_notes_file = '~/workspace/src/github.com/deptno/org/refile.org',
+    "akinsho/org-bullets.nvim",
+    config = function()
+      require("org-bullets").setup {
+        symbols = { "◉", "○", "✸", "✿" },
       }
     end
   }
