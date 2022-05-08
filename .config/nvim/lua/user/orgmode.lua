@@ -10,6 +10,10 @@ orgmode.setup {
     global = {
       org_agenda = {'<space>oa', '<leader>oa'},
       org_capture = {'<space>oc', '<leader>oc'},
+    },
+    org = {
+      org_toggle_checkbox = {';x', '<S-x>'},
+      org_open_at_point = {'<cr>', '<leader>oo'},
     }
   }
 }
