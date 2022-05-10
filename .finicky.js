@@ -74,6 +74,10 @@ module.exports = {
       browser: COMPANY,
     },
     {
+      match: /https:\/\/linter-report/,
+      browser: COMPANY,
+    },
+    {
       match: ({ url }) => {
         const queries = getUrlParams(url.search)
         const payload = parseJwt(queries.login_hint)
