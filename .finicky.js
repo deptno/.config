@@ -70,6 +70,10 @@ module.exports = {
       browser: ZEPLIN_FE,
     },
     {
+      match: /https:\/\/www\.figma\.com\/file/,
+      browser: COMPANY,
+    },
+    {
       match: ({ url }) => {
         const queries = getUrlParams(url.search)
         const payload = parseJwt(queries.login_hint)
