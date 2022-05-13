@@ -14,6 +14,21 @@ orgmode.setup {
     org = {
       org_toggle_checkbox = {';x', '<S-x>'},
       org_open_at_point = {'<cr>', '<leader>oo'},
+      org_insert_heading_respect_content = {';h', '<leader>oih'},
+      org_meta_return = {';n', '<leader><cr>'},
+      org_toggle_archive_tag = ';a',
+      org_archive_subtree = ';$',
+      org_todo = ';c',
+      org_priority_up = '+',
+      org_priority_down = '-',
+      org_change_date = ';cd',
+      org_deadline = ';dd',
+      org_schedule = ';ds',
+      org_time_stamp = ';dt',
+      org_clock_in = ';ci',
+      org_clock_out = ';co',
+      org_clock_goto = ';cg',
+      org_set_effort = ';e',
     }
   }
 }
