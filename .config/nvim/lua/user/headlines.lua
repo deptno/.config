@@ -46,6 +46,6 @@ require("headlines").setup {
         codeblock_highlight = "CodeBlock",
         dash_highlight = "Dash",
         dash_string = "-",
-        fat_headlines = true,
+        fat_headlines = false,
     },
 }
