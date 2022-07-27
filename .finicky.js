@@ -78,6 +78,10 @@ module.exports = {
       browser: COMPANY,
     },
     {
+      match: /https:\/\/app\.datadoghq\.com/,
+      browser: COMPANY,
+    },
+    {
       match: ({ url }) => {
         const queries = getUrlParams(url.search)
         const payload = parseJwt(queries.login_hint)
