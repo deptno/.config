@@ -13,7 +13,7 @@ orgmode.setup {
     },
     org = {
       org_toggle_checkbox = {';x', '<S-x>'},
-      org_open_at_point = {'<cr>', '<leader>oo'},
+      org_open_at_point = {'<cr>'},
       org_insert_heading_respect_content = {';h', '<leader>oih'},
       org_meta_return = {';n', '<leader><cr>'},
       org_toggle_archive_tag = ';a',
@@ -29,6 +29,7 @@ orgmode.setup {
       org_clock_out = ';co',
       org_clock_goto = ';cg',
       org_set_effort = ';e',
+      org_agenda_todo = '<cr>'
     }
   }
 }
