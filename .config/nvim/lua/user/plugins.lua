@@ -62,7 +62,7 @@ packer.startup(function(use)
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-copilot',
+      -- 'hrsh7th/cmp-copilot',
       'L3MON4D3/LuaSnip',
     },
   }
@@ -76,7 +76,7 @@ packer.startup(function(use)
       require('Comment').setup()
     end
   }
-  use 'github/copilot.vim'
+  -- use 'github/copilot.vim'
   use 'windwp/nvim-autopairs'
   use 'lukas-reineke/indent-blankline.nvim'
   use {
@@ -86,7 +86,7 @@ packer.startup(function(use)
     end
   }
   use {
-    'chentau/marks.nvim',
+    'chentoast/marks.nvim',
     config = function()
       require'marks'.setup {
         -- whether to map keybinds or not. default true
@@ -135,17 +135,17 @@ packer.startup(function(use)
   -- treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   -- orgmode
-  require('orgmode').setup_ts_grammar()
-  use { 'nvim-orgmode/orgmode' }
-  use { 'lukas-reineke/headlines.nvim' }
-  use {
-    "akinsho/org-bullets.nvim",
-    config = function()
-      require("org-bullets").setup {
-        symbols = { "◉", "○", "✸", "✿" },
-      }
-    end
-  }
+  -- require('orgmode').setup_ts_grammar()
+  -- use { 'nvim-orgmode/orgmode' }
+  -- use { 'lukas-reineke/headlines.nvim' }
+  -- use {
+  --   "akinsho/org-bullets.nvim",
+  --   config = function()
+  --     require("org-bullets").setup {
+  --       symbols = { "◉", "○", "✸", "✿" },
+  --     }
+  --   end
+  -- }
   use {
     "michaelb/sniprun",
     run = "bash install.sh",
