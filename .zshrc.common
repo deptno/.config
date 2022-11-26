@@ -131,7 +131,8 @@ export EDITOR='vim'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 alias k=kubectl
-alias m=neomutt
+alias m=multipass
+alias tt=neomutt
 alias wol=$XDG_CONFIG_HOME/sh/wol_x5950.sh
 alias min="open -a /Applications/Min.app"
 alias ll="exa --long --all --icons --git --time-style=long-iso --color-scale --links --header --sort=mod --reverse --group-directories-first"
