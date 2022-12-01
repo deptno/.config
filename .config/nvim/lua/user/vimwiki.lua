@@ -19,11 +19,12 @@ vim.cmd [[
 augroup vimwiki_keymap
   autocmd!
   autocmd FileType vimwiki nmap <S-x> <Plug>VimwikiToggleListItemj
-  autocmd FileType vimwiki nmap <LocalLeader>wn <Plug>VimwikiNextLink
   autocmd FileType vimwiki nnoremap <LocalLeader>wt :VimwikiTable<CR>
   autocmd FileType vimwiki nnoremap <LocalLeader>wg :VimwikiDiaryGenerateLinks<CR>
-  autocmd FileType vimwiki nnoremap gr :execute "VkS /" . expand("<cword>") . "/" <Bar> :lopen<CR>
-  autocmd FileType vimwiki nnoremap gk :execute "VkB" <Bar> :lopen<CR>
+  autocmd FileType vimwiki nnoremap <LocalLeader>n <Plug>VimwikiDiaryNextDay 
+  autocmd FileType vimwiki nnoremap <LocalLeader>N <Plug>VimwikiDiaryPrevDay 
+  autocmd FileType vimwiki nnoremap gr :execute "VWS /" . expand("<cword>") . "/" <Bar> :lopen<CR>
+  autocmd FileType vimwiki nnoremap gk :execute "VWB" <Bar> :lopen<CR>
   autocmd BufEnter *.md set syntax=markdown
 augroup end
 ]]
