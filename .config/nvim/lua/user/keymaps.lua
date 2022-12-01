@@ -16,8 +16,8 @@ vim.g.maplocalleader = ";"
 keymap("n", "cd", ":cd %:h | pwd<cr>", opts)
 keymap("n", "cd-", ":cd - | pwd<cr>", opts)
 keymap("n", "sw", ":set wrap!<cr>", opts)
-keymap("n", ";d", 'a<space><space><esc>"=strftime("%Y-%m-%d %T")<cr>P', opts)
-keymap("n", ";dd", 'a<space><space><esc>"=strftime("%Y-%m-%d")<cr>P', opts)
+keymap("n", ";dt", 'a<space><esc>"=strftime("%Y-%m-%d %T")<cr>P', opts)
+keymap("n", ";dd", 'a<space><esc>"=strftime("%Y-%m-%d")<cr>P', opts)
 keymap("n", "tt", "tabnew<cr>", opts)
 keymap("n", ";w", ":setlocal wrap!<cr>", opts)
 -- rest
@@ -27,7 +27,6 @@ keymap("n", ";rl", "<plug>RestNvimLast", {})
 -- nvim-tree
 keymap("n", "sf",     ":NvimTreeToggle<CR>", opts)
 keymap("n", "<leader>r", ":NvimTreeRefresh<CR>", opts)
-keymap("n", "<leader>n", ":NvimTreeFindFile<CR>", opts)
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
