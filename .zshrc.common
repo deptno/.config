@@ -188,6 +188,8 @@ alias gpl="gh pr list \
   (printf \"%v\" (join \" \" (pluck \"state\" .latestReviews)))
 }}
 {{end}}'"
+alias sudo="sudo "
+
 function gpld() {
   gpl "$@" \
   | sed '/^$/d' \
