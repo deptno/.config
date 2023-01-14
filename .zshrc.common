@@ -134,6 +134,7 @@ export EDITOR='vim'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 alias k=kubectl
+alias calicoctl="kubectl exec -i -n kube-system calicoctl -- /calicoctl"
 alias m=multipass
 alias tt=neomutt
 alias wol=$XDG_CONFIG_HOME/sh/wol_x5950.sh
