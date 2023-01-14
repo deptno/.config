@@ -9,6 +9,11 @@ source ~/.zshrc.common
 source ~/.zshrc.zigbang
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
+# zsh plugins
+if [[ ! -d $ZSH_CUSTOM/plugins/kubetail ]]; then
+  git clone https://github.com/johanhaleby/kubetail.git $ZSH_CUSTOM/plugins/kubetail
+fi
+
 if [[ -z "$TMUX" ]]; then
   if [[ -d ${XDG_CONFIG_HOME:-$HOME/.config}/nnn/plugins ]]; then
     plugins=$(ls ${XDG_CONFIG_HOME:-$HOME/.config}/nnn/plugins | wc -l)

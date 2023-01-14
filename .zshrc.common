@@ -104,6 +104,7 @@ plugins=(
   aws
   kubectl
   kube-ps1
+  kubetail
 )
 
 source $ZSH/oh-my-zsh.sh
