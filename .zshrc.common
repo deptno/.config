@@ -202,8 +202,8 @@ function gpld() {
 if [[ $(uname -s) == "Darwin" ]]; then
   if [[ $(sysctl -n machdep.cpu.brand_string | cut -d ' ' -f1-2) == "Apple M1" ]]; then
     # alias for m1
-    alias brew="arch -arm64 brew"
-    alias ibrew="arch -x86_64 brew"
+    # alias brew="arch -arm64 brew"
+    # alias ibrew="arch -x86_64 brew"
   fi
 fi
 
