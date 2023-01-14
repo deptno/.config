@@ -1,9 +1,10 @@
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # chruby
-source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-source /opt/homebrew/opt/chruby/share/chruby/auto.sh
-
+if [[ -d /opt/homebrew/opt/chruby/share/chruby ]]; then
+  source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+  source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+fi
 source ~/.zshrc.common
 source ~/.zshrc.zigbang
 fpath+=${ZDOTDIR:-~}/.zsh_functions
