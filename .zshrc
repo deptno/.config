@@ -45,6 +45,7 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
+source <(helm completion zsh)
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
