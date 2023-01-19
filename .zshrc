@@ -39,20 +39,8 @@ if [[ -z "$TMUX" ]]; then
   fi
 fi
 
-# Added by serverless binary installer
-export PATH="$HOME/.serverless/bin:$PATH"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
 source <(helm completion zsh)
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/deptno/workspace/src/github.com/zigbang/account/packages/zigbang-account/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/deptno/workspace/src/github.com/zigbang/account/packages/zigbang-account/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/deptno/workspace/src/github.com/zigbang/account/packages/zigbang-account/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/deptno/workspace/src/github.com/zigbang/account/packages/zigbang-account/node_modules/tabtab/.completions/sls.zsh
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /Users/deptno/workspace/src/github.com/zigbang/account/packages/zigbang-account/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/deptno/workspace/src/github.com/zigbang/account/packages/zigbang-account/node_modules/tabtab/.completions/slss.zsh
