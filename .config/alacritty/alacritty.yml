@@ -4,7 +4,8 @@ env:
   TERM: xterm-256color
 font:
   normal:
-    family: Hack Nerd Font Mono
+    family: SFMono Nerd Font
+    style: Light
   size: 18
 bell:
   animation: Ease
