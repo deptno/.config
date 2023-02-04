@@ -18,6 +18,10 @@ module.exports = {
       browser: "Min",
     },
     {
+      match: /^http:\/\/localhost:8457.*$/,
+      browser: "Min",
+    },
+    {
       match: /zigbang/,
       browser: COMPANY,
     },
