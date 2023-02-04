@@ -117,3 +117,8 @@
 # normal, black, red, green, yellow, blue, magenta, cyan and white. 
 # bright, like brightred.
 # bold, dim, ul, blink, reverse, italic, and strike + prefix: no-
+[credential]
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
