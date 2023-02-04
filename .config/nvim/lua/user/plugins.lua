@@ -32,6 +32,15 @@ packer.startup(function(use)
   use "wbthomason/packer.nvim"
   -- wiki
   use { 'vimwiki/vimwiki', branch = 'dev' }
+  -- markdown
+  use({
+      "iamcco/markdown-preview.nvim",
+      config = function()
+        vim.g.mkdp_browser = 'finicky'
+        vim.g.mkdp_port = '8457' -- fix for finicky
+      end,
+      run = function() vim.fn["mkdp#util#install"]() end,
+  })
   -- typing
   use 'tpope/vim-surround'
   -- theme

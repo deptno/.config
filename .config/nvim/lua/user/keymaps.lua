@@ -49,6 +49,9 @@ keymap("n", ';g', '<cmd>Telescope live_grep<cr>', opts)
 keymap("n", ';b', '<cmd>Telescope buffers<cr>', opts)
 keymap("n", ';t', '<cmd>Telescope<cr>', opts)
 
+-- Telescope
+keymap("n", '-p', '<cmd>MarkdownPreview<cr>', opts)
+
 -- Insert --
 
 -- Visual --
