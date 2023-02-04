@@ -189,6 +189,7 @@ alias gpl="gh pr list \
 }}
 {{end}}'"
 alias sudo="sudo "
+alias watch="watch "
 
 function gpld() {
   gpl "$@" \
