@@ -234,6 +234,8 @@ let g:beacon_timeout = 2000
       require('rust-tools').setup({})
     end,
   }
+  -- slide
+  use {'sotte/presenting.vim'}
 
   if packer_bootstrap then
     require('packer').sync()
