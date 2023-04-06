@@ -35,11 +35,14 @@ packer.startup(function(use)
   -- markdown
   use({
       "iamcco/markdown-preview.nvim",
+      run = function() vim.fn["mkdp#util#install"]() end,
       config = function()
         vim.g.mkdp_browser = 'finicky'
         vim.g.mkdp_port = '8457' -- fix for finicky
+        vim.g.mkdp_preview_options = {
+          disable_sync_scroll = 1
+        }
       end,
-      run = function() vim.fn["mkdp#util#install"]() end,
   })
   -- typing
   use 'tpope/vim-surround'
