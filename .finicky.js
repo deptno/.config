@@ -92,7 +92,7 @@ module.exports = {
     {
       match: [
         'https://slack.com/oauth/v2/authorize?scope=incoming-webhook&client_id=2154695248.29651499271*',
-        'https://www.notion.so/*&n=slack'
+        'https://www.notion.so/*&n=slack*',
       ],
       browser: COMPANY,
     },
