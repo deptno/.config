@@ -19,4 +19,8 @@ configs.setup {
     enable = true,
     enable_autocmd = false,
   },
+  indent = {
+    enable = true,
+    disable = { 'yaml' }
+  }
 }
