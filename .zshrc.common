@@ -191,6 +191,12 @@ alias gpl="gh pr list \
 alias sudo="sudo "
 alias watch="watch "
 
+function gswb() {
+  gsw "$(git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short) - %(committerdate:relative)' | fzf |  awk '{print $1}')"
+}
+function gswr() {
+  gsw "$(git for-each-ref --sort=-committerdate refs/remotes/origin/ --format='%(refname:short) %(committerdate:relative), %(authoremail), %(subject) - ' | fzf | awk '{print $1}' | sed 's|origin/||')"
+}
 function gpld() {
   gpl "$@" \
   | sed '/^$/d' \
