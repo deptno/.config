@@ -197,6 +197,9 @@ function gswb() {
 function gswr() {
   gsw "$(git for-each-ref --sort=-committerdate refs/remotes/origin/ --format='%(refname:short) %(committerdate:relative), %(authoremail), %(subject) - ' | fzf | awk '{print $1}' | sed 's|origin/||')"
 }
+function gmb() {
+  gm --no-ff "$(git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short) - %(committerdate:relative)' | fzf |  awk '{print $1}')"
+}
 function gpld() {
   gpl "$@" \
   | sed '/^$/d' \
