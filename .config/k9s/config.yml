@@ -1,0 +1,80 @@
+k9s:
+  refreshRate: 2
+  maxConnRetry: 5
+  enableMouse: false
+  headless: false
+  logoless: true
+  crumbsless: false
+  readOnly: false
+  noExitOnCtrlC: false
+  noIcons: false
+  skipLatestRevCheck: false
+  logger:
+    tail: 5000
+    buffer: 5000
+    sinceSeconds: 60
+    fullScreenLogs: true
+    textWrap: false
+    showTime: false
+  currentContext: amd64-tubemon-prod@amd64
+  currentCluster: amd64
+  clusters:
+    amd64:
+      namespace:
+        active: tubemon-dev
+        lockFavorites: true
+        favorites:
+        - all
+        - postgresql
+        - traefik
+        - harbor
+        - tubemon-dev
+        - tubemon
+        - deptno
+        - home-assistant
+      view:
+        active: cj
+      featureGates:
+        nodeShell: false
+      shellPod:
+        image: busybox:1.35.0
+        command: []
+        args: []
+        namespace: default
+        limits:
+          cpu: 100m
+          memory: 100Mi
+        labels: {}
+      portForwardAddress: localhost
+    pi:
+      namespace:
+        active: all
+        lockFavorites: false
+        favorites:
+        - traefik
+        - metallb-system
+        - all
+        - test
+        - default
+      view:
+        active: po
+      featureGates:
+        nodeShell: false
+      shellPod:
+        image: busybox:1.35.0
+        command: []
+        args: []
+        namespace: default
+        limits:
+          cpu: 100m
+          memory: 100Mi
+        labels: {}
+      portForwardAddress: localhost
+  thresholds:
+    cpu:
+      critical: 90
+      warn: 70
+    memory:
+      critical: 90
+      warn: 70
+  screenDumpDir: /var/folders/yr/lb2jlrrd1fs7h6hn30n_ksvr0000gn/T/k9s-screens-deptno
