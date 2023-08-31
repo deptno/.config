@@ -85,8 +85,7 @@ nvimtree.setup {
     hide_root_folder = false,
     side = 'left',
     mappings = {
-     custom_only = false,
-      list = list,
+      custom_only = false,
     },
     number = true,
     relativenumber = true,
