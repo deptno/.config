@@ -57,7 +57,16 @@ packer.startup(function(use)
   }
   -- lsp
   use "williamboman/mason.nvim"
-  use "williamboman/mason-lspconfig.nvim"
+  use {
+    "williamboman/mason-lspconfig.nvim",
+    config = function()
+      require('mason-lspconfig').setup {
+        ensure_installed = {
+          "rust_analyzer"
+        }
+      }
+    end
+  }
   use 'neovim/nvim-lspconfig'
   -- use 'williamboman/nvim-lsp-installer'
   use 'tamago324/nlsp-settings.nvim'
