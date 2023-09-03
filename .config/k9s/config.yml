@@ -16,7 +16,7 @@ k9s:
     fullScreenLogs: true
     textWrap: false
     showTime: false
-  currentContext: amd64-tubemon-prod@amd64
+  currentContext: amd64-tubemon-dev@amd64
   currentCluster: amd64
   clusters:
     amd64:
