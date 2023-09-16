@@ -42,13 +42,20 @@ nvimtree.setup {
     timeout = 500,
   },
   view = {
-    width = 80,
-    -- height = 30,
     hide_root_folder = false,
-    side = 'left',
     number = true,
-    relativenumber = true,
-    signcolumn = "yes"
+    signcolumn = "yes",
+    float = {
+      enable = true,
+      quit_on_focus_loss = true,
+      open_win_config = {
+        relative = "cursor",
+        border = "rounded",
+        style = "minimal",
+        width = 50,
+        height = 30,
+      },
+    },
   },
   trash = {
     cmd = "trash",
