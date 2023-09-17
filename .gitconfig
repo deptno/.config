@@ -20,27 +20,17 @@
   la = log --color --graph --pretty=format:'%C(blue)%cr %C(dim magenta)%h%Creset%C(auto)%d%Creset %C(black reverse ul)%aL%Creset %s' --abbrev-commit
   ba = bisect visualize --color --pretty=format:'%C(blue)%cr %C(dim magenta)%h%Creset%C(auto)%d%Creset %C(black reverse ul)%aL%Creset %s' --abbrev-commit
   ld = log --color --graph --simplify-by-decoration --pretty=format:'%C(blue)%cr %C(dim white)%h%Creset%C(auto)%d%Creset %C(green ul italic)%aL%Creset %s' --abbrev-commit
-  dt = difftool
   bg = ! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\"' | xargs -r 'git branch -D'"
 [diff]
-	tool = difft
-	compactionHeuristic = true
-  renames = true
-[difftool]
-	prompt = false
+  external = difft
 [difftool "vscode"]
 	cmd = code --wait --diff $LOCAL $REMOTE
-[difftool "difft"]
-  cmd = difft "$LOCAL" "$REMOTE"
 [pager]
   difftool = true
 [merge]
 	tool = vscode
 [mergetool "vscode"]
 	cmd = code --wait $MERGED
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
