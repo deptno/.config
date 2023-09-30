@@ -16,12 +16,12 @@ k9s:
     fullScreenLogs: true
     textWrap: false
     showTime: false
-  currentContext: amd64-tubemon-dev@amd64
+  currentContext: amd64-admin@amd64
   currentCluster: amd64
   clusters:
     amd64:
       namespace:
-        active: tubemon-dev
+        active: all
         lockFavorites: true
         favorites:
         - all
@@ -33,7 +33,7 @@ k9s:
         - deptno
         - home-assistant
       view:
-        active: cj
+        active: dp
       featureGates:
         nodeShell: false
       shellPod:
