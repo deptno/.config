@@ -15,6 +15,7 @@
   precomposeUnicode = true
   quotePath = false
 	autocrlf = input
+  pager = delta
 [alias]
   l = log --color --graph --date=short --pretty=format:'%Cgreen(%cd) %Cred%h%Creset -%C(yellow)%d%Creset %C(bold blue)<%aL>%Creset %s' --abbrev-commit
   la = log --color --graph --date=short --pretty=format:'%C(blue)%cd %C(dim magenta)%h%Creset%C(auto)%d%Creset %C(black reverse ul)%aL%Creset %s' --abbrev-commit
@@ -23,12 +24,27 @@
   bg = ! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\"' | xargs -r 'git branch -D'"
 [diff]
   external = difft
+  colorMoved = default
 [difftool "vscode"]
 	cmd = code --wait --diff $LOCAL $REMOTE
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  navigate = true
+  line-numbers = true
+  line-numbers-left-format = {np:4}
+  line-numbers-right-format = {np:4}
+  line-numbers-left-style = gray
+  line-numbers-right-style = gray
+  hunk-header-decoration-style = blue
+  hunk-header-file-style = green
+  hunk-header-style = omit
+  file-decoration-style = none
 [pager]
   difftool = true
 [merge]
 	tool = vscode
+  conflictstyle = diff3
 [mergetool "vscode"]
 	cmd = code --wait $MERGED
 [mergetool "sourcetree"]
