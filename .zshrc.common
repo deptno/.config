@@ -141,8 +141,6 @@ alias wol=$XDG_CONFIG_HOME/sh/wol_x5950.sh
 alias min="open -a /Applications/Min.app"
 alias ll="exa --long --all --icons --git --time-style=long-iso --color-scale --links --header --sort=mod --reverse --group-directories-first"
 alias lln="exa --long --all --icons --git --time-style=long-iso --color-scale --links --header --reverse --group-directories-first"
-alias w1="cd ~/workspace/src/github.com/deptno/deptno.github.io.wiki/"
-alias w2="cd ~/workspace/src/github.com/deptno/wiki/"
 alias hl-gh="GREP_COLOR='2;37' grep --color=always -E 'true|$' \
   | GREP_COLOR='2;36;47' grep --color=always -E 'false|$' \
   | GREP_COLOR='5;31;47' grep --color=always -Ei 'release\/|$' \
