@@ -30,6 +30,7 @@
 [interactive]
   diffFilter = delta --color-only
 [delta]
+  paging = always
   navigate = true
   line-numbers = true
   line-numbers-left-format = {np:4}
@@ -50,6 +51,8 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[tig "bind"]
+    generic = "<enter>" >git show %(commit)
 
 [includeIf "gitdir:~/.tmux/plugins/"]
 	path = ~/.gitconfig.tmux
