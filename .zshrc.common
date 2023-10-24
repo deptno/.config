@@ -188,6 +188,7 @@ alias gpl="gh pr list \
 {{end}}'"
 alias sudo="sudo "
 alias watch="watch "
+alias lz="lazygit"
 
 function gswb() {
   gsw "$(git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short) - %(committerdate:relative)' | fzf |  awk '{print $1}')"
