@@ -28,6 +28,19 @@ git:
     pager: delta --paging=never
   merging:
     args: '--no-ff'
+  commitPrefixes:
+    zigbang-client:
+      pattern: "^\\w+\\/(\\w+-\\w+).*"
+      replace: '[$1] '
+    s.zigbang.com:
+      pattern: "^\\w+\\/(\\w+-\\w+).*"
+      replace: '[$1] '
+    house-partners-client:
+      pattern: "^\\w+\\/(\\w+-\\w+).*"
+      replace: '[$1] '
+    single-page:
+      pattern: "^\\w+\\/(\\w+-\\w+).*"
+      replace: '[$1] '
 
 keybinding:
   universal:
