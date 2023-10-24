@@ -21,9 +21,20 @@ gui:
       - '#c6d0f5'
     searchingActiveBorderColor:
       - '#e5c890'
+
 git:
   paging:
     colorArg: always
     pager: delta --paging=never
   merging:
     args: '--no-ff'
+
+keybinding:
+  universal:
+    togglePanel: '<tab>'
+    nextTab: 'l'
+    prevTab: 'h'
+    nextBlock-alt: ''
+    prevBlock-alt: ''
+    nextScreenMode: '='
+    prevScreenMode: '-'
