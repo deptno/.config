@@ -5,6 +5,8 @@
 	name = deptno
 	email = deptno@gmail.com
 	signingkey = 770E7F433A7BEBC20AC6712FA20921D2906CB572
+[pull]
+	rebase = true
 [commit]
 	gpgsign = true
 [gpg]
