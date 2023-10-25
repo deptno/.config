@@ -65,6 +65,7 @@ git:
     single-page:
       pattern: "^\\w+\\/(\\w+-\\w+).*"
       replace: '[$1] '
+  autoRefresh: false
 
 keybinding:
   universal:
