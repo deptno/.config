@@ -1,4 +1,14 @@
+#ref https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
 gui:
+  language: ko
+  expandFocusedSidePanel: true
+  border: hidden
+  showPanelJumps: true
+  showBottomLine: false
+  nerdFontsVersion: "3"
+  timeFormat: '02 Jan 06' #ref https://pkg.go.dev/time#Time.Format
+  shortTimeFormat: '3:04PM'
+
   branchColors:
     'prod': '#A459D1'
     'hotfix': '#A94656'
