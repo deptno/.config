@@ -22,7 +22,8 @@ gui:
     'Leo Lee (이봉균)': white
     '*': '#B0B0B0'
 
-  theme: # @ref https://github.com/catppuccin/lazygit/blob/65c3b60aafc12b2c88494e012dbb1404086484dd/themes-mergable/frappe/frappe-rosewater.yml
+  #ref https://github.com/catppuccin/lazygit/blob/65c3b60aafc12b2c88494e012dbb1404086484dd/themes-mergable/frappe/frappe-rosewater.yml
+  theme: 
     activeBorderColor:
       - '#f2d5cf'
       - bold
