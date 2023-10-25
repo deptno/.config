@@ -1,4 +1,27 @@
 gui:
+  branchColors:
+    'prod': '#A459D1'
+    'hotfix': '#A94656'
+    'release': '#FFB84C'
+    'feature': '#555555'
+    'deploy': '#B0B0B0'
+    'master': 'white'
+    'main': 'white'
+
+  authorColors:
+    'Nick Lee (이동호)': '#E5C07B'
+    '이동호': '#E5C07B'
+    'Dan Jeong (정구열)': '#30E3DF'
+    'jeongguyeol': '#30E3DF'
+    'MJ Jo(조민지)': '#B05A7A'             
+    'minji': '#B05A7A'
+    'Jinwoong Hwang (황진웅)': '#77D970'
+    'woong': '#77D970'
+    'deptno': white
+    '이봉': white
+    'Leo Lee (이봉균)': white
+    '*': '#B0B0B0'
+
   theme: # @ref https://github.com/catppuccin/lazygit/blob/65c3b60aafc12b2c88494e012dbb1404086484dd/themes-mergable/frappe/frappe-rosewater.yml
     activeBorderColor:
       - '#f2d5cf'
