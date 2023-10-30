@@ -1,0 +1,114 @@
+#ref https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
+gui:
+  language: en
+  expandFocusedSidePanel: true
+  border: single
+  showPanelJumps: true
+  showBottomLine: false
+  nerdFontsVersion: "3"
+  timeFormat: '02 Jan 06' #ref https://pkg.go.dev/time#Time.Format
+  shortTimeFormat: '3:04PM'
+
+  branchColors:
+    'prod': '#A459D1'
+    'hotfix': '#A94656'
+    'release': '#FFB84C'
+    'feature': '#555555'
+    'deploy': '#B0B0B0'
+    'master': 'white'
+    'main': 'white'
+
+  authorColors:
+    'Nick Lee (이동호)': '#E5C07B'
+    '이동호': '#E5C07B'
+    'Dan Jeong (정구열)': '#30E3DF'
+    'jeongguyeol': '#30E3DF'
+    'MJ Jo(조민지)': '#B05A7A'             
+    'minji': '#B05A7A'
+    'Jinwoong Hwang (황진웅)': '#77D970'
+    'woong': '#77D970'
+    'deptno': white
+    '이봉': white
+    'Leo Lee (이봉균)': white
+    '*': '#B0B0B0'
+
+  #ref https://github.com/catppuccin/lazygit/blob/65c3b60aafc12b2c88494e012dbb1404086484dd/themes-mergable/frappe/frappe-rosewater.yml
+  theme: 
+    activeBorderColor:
+      - '#f2d5cf'
+      - bold
+    inactiveBorderColor:
+      - '#a5adce'
+    optionsTextColor:
+      - '#8caaee'
+    selectedLineBgColor:
+      - '#414559'
+    selectedRangeBgColor:
+      - '#414559'
+    cherryPickedCommitBgColor:
+      - '#51576d'
+    cherryPickedCommitFgColor:
+      - '#f2d5cf'
+    unstagedChangesColor:
+      - '#e78284'
+    defaultFgColor:
+      - '#c6d0f5'
+    searchingActiveBorderColor:
+      - '#e5c890'
+
+git:
+  paging:
+    colorArg: always
+    pager: delta --paging=never
+  merging:
+    args: '--no-ff'
+  commitPrefixes:
+    zigbang-client:
+      pattern: "^\\w+\\/(\\w+-\\w+).*"
+      replace: '[$1] '
+    s.zigbang.com:
+      pattern: "^\\w+\\/(\\w+-\\w+).*"
+      replace: '[$1] '
+    house-partners-client:
+      pattern: "^\\w+\\/(\\w+-\\w+).*"
+      replace: '[$1] '
+    single-page:
+      pattern: "^\\w+\\/(\\w+-\\w+).*"
+      replace: '[$1] '
+  autoRefresh: false
+
+keybinding:
+  universal:
+    quit: '<c-c>'
+    return: 'q'
+    togglePanel: '<tab>'
+    nextTab: 'l'
+    prevTab: 'h'
+    nextBlock-alt: ''
+    prevBlock-alt: ''
+    nextScreenMode: '='
+    prevScreenMode: '-'
+
+quitOnTopLevelReturn: true
+promptToReturnFromSubprocess: false
+
+customCommands:
+- key: a
+  command: 'git pull --rebase --autostash'
+  context: localBranches
+- key: a
+  command: 'git la --author={{.Form.author | quote}}'
+  context: commits
+  description: 'logs by author'
+  subprocess: true
+  prompts:
+    - type: 'input'
+      title: 'author'
+      key: 'author'
+      suggestions:
+        preset: authors
+- key: b
+  command: 'tig blame {{.SelectedFile.Name}}'
+  context: files
+  description: 'blame'
+  subprocess: true
