@@ -1,6 +1,6 @@
 #ref https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
 gui:
-  language: ko
+  language: en
   expandFocusedSidePanel: true
   border: hidden
   showPanelJumps: true
