@@ -87,3 +87,25 @@ keybinding:
     prevBlock-alt: ''
     nextScreenMode: '='
     prevScreenMode: '-'
+
+customCommands:
+- key: a
+  command: 'git pull --rebase --autostash'
+  context: localBranches
+- key: a
+  command: 'git la --author={{.Form.author | quote}}'
+  context: commits
+  description: 'logs by author'
+  subprocess: true
+  prompts:
+    - type: 'input'
+      title: 'author'
+      key: 'author'
+      suggestions:
+        preset: authors
+- key: b
+  command: 'tig blame {{.SelectedFile.Name}}'
+  context: files
+  description: 'blame'
+  subprocess: true
+
