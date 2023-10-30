@@ -80,7 +80,6 @@ git:
 keybinding:
   universal:
     quit: '<c-c>'
-    return: 'q'
     togglePanel: '<tab>'
     nextTab: 'l'
     prevTab: 'h'
