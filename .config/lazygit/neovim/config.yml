@@ -111,3 +111,18 @@ customCommands:
   context: files
   description: 'blame'
   subprocess: true
+- key: G
+  command: 'gh pr view -w {{.SelectedLocalBranch.Name}} || GH_CONFIG_DIR=~/.config/gh_accounts/deptno-zb gh pr view -w {{.SelectedRemoteBranch.Name}}'
+  context: localBranches
+  description: 'open github pr'
+  subprocess: true
+- key: G
+  command: 'gh pr view -w {{.SelectedRemoteBranch.Name}} || GH_CONFIG_DIR=~/.config/gh_accounts/deptno-zb gh pr view -w {{.SelectedRemoteBranch.Name}}'
+  context: remoteBranches
+  description: 'open github pr'
+  subprocess: true
+- key: G
+  command: 'gh pr view -w {{.SelectedRemoteBranch.Name}} || GH_CONFIG_DIR=~/.config/gh_accounts/deptno-zb gh pr view -w {{.SelectedRemoteBranch.Name}}'
+  context: commits
+  description: 'open github pr'
+  subprocess: true
