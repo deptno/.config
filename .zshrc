@@ -42,3 +42,10 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
 source <(helm completion zsh)
+
+# bun completions
+[ -s "/Users/deptno/.bun/_bun" ] && source "/Users/deptno/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
