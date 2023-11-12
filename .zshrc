@@ -49,3 +49,8 @@ source <(helm completion zsh)
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# bind hstr
+if which hstr > /dev/null 2>&1; then \
+  bindkey -s "\C-r" "\C-a hstr -- \C-j"; \
+fi
