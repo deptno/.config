@@ -29,11 +29,6 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# bind hstr
-if which hstr > /dev/null 2>&1; then \
-  bindkey -s "\C-r" "\C-a hstr -- \C-j"; \
-fi
-
 # chruby
 if [[ -d /opt/homebrew/opt/chruby/share/chruby ]]; then
   source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
@@ -84,6 +79,11 @@ source $ZSH/oh-my-zsh.sh
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
 source <(helm completion zsh)
+
+# bind hstr
+if which hstr > /dev/null 2>&1; then \
+  bindkey -s "\C-r" "\C-a hstr -- \C-j"; \
+fi
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
