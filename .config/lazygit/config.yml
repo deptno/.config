@@ -109,15 +109,33 @@ customCommands:
   description: 'blame'
   subprocess: true
 - key: G
-  command: 'gh pr view -w {{.SelectedLocalBranch.Name}}'
+  command: 'gh pr list -w --{{.Form.To}} {{.SelectedLocalBranch.Name}}'
   context: localBranches
   description: 'open github pr'
   subprocess: true
+  prompts:
+    - type: 'menu'
+      title: '* {{.SelectedLocalBranch.Name}}?'
+      key: 'To'
+      options:
+        - name: 'base'
+          value: 'base'
+        - name: 'head'
+          value: 'head'
 - key: G
-  command: 'gh pr view -w {{.SelectedRemoteBranch.Name}}'
+  command: 'gh pr list -w --{{.Form.To}} {{.SelectedRemoteBranch.Name}}'
   context: remoteBranches
   description: 'open github pr'
   subprocess: true
+  prompts:
+    - type: 'menu'
+      title: '* {{.SelectedLocalBranch.Name}}?'
+      key: 'To'
+      options:
+        - name: 'base'
+          value: 'base'
+        - name: 'head'
+          value: 'head'
 - key: G
   command: 'gh pr list -w --{{.Form.To}} {{.SelectedLocalBranch.Name}}'
   context: commits
@@ -132,3 +150,4 @@ customCommands:
           value: 'base'
         - name: 'head'
           value: 'head'
+
