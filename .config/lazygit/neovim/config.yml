@@ -6,7 +6,7 @@ gui:
   showPanelJumps: true
   showBottomLine: false
   nerdFontsVersion: "3"
-  timeFormat: '02 Jan 06' #ref https://pkg.go.dev/time#Time.Format
+  timeFormat: '06-01-02' #ref https://pkg.go.dev/time#Time.Format
   shortTimeFormat: '3:04PM'
 
   branchColors:
