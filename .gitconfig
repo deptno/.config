@@ -25,6 +25,7 @@
   ld = log --color --graph --date=short --simplify-by-decoration --pretty=format:'%C(blue)%cd %C(dim white)%h%Creset%C(auto)%d%Creset %C(green ul italic)%aL%Creset %s' --abbrev-commit
   gone = ! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\"' | xargs -r 'git branch -D'"
   dmb = ! "git for-each-ref | grep 'commit\trefs/heads' | grep -v \"$(git rev-parse @)\" | awk '{print $3}' | sed 's|refs/heads/||' | xargs -I {} sh -c \"git branch --contains {} | grep '* ' > /dev/null && [ $? -eq 0 ] && git branch -d {}\""
+  ds =  ! "1=${1:-30}; f() { git diff $(git log --since=\"$1 days ago\" --pretty=format:'%H' | tail -1).. --stat; }; f"
 [diff]
   external = difft
   colorMoved = default
