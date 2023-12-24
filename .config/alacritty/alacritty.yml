@@ -17,6 +17,7 @@ bell:
   #     args: ["Hello, World!"]
   command: None
 window:
+  opacity: 0.9
   padding:
     x: 0
   history: 50000
