@@ -75,7 +75,9 @@ git:
     single-page:
       pattern: "^\\w+\\/(\\w+-\\w+).*"
       replace: '[$1] '
+  mainBranches: [master, main]
   autoRefresh: false
+  autoFetch: false
 
 keybinding:
   universal:
