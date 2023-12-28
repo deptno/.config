@@ -1,0 +1,29 @@
+import = ["/Users/deptno/.config/alacritty/dracula.toml"]
+
+[bell]
+animation = "Ease"
+color = "0xffffff"
+command = "None"
+duration = 1000
+
+[colors.primary]
+background = "0x2c2c2c"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 18
+
+[font.normal]
+family = "SFMono Nerd Font"
+style = "Light"
+
+[window]
+opacity = 0.9
+
+[scrolling]
+history = 50000
+
+[window.padding]
+x = 0
