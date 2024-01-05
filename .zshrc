@@ -213,4 +213,6 @@ function review() {
 }
 
 # work specific
-source ~/.zshrc.zigbang
+if [ -e ~/.zshrc.zigbang ]; then
+  source ~/.zshrc.zigbang
+fi
