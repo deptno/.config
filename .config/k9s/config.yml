@@ -35,7 +35,7 @@ k9s:
       view:
         active: dp
       featureGates:
-        nodeShell: false
+        nodeShell: true
       shellPod:
         image: busybox:1.35.0
         command: []
