@@ -1,3 +1,4 @@
+export XDG_CONFIG_HOME="$HOME/.config"
 if [ -e ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
@@ -7,7 +8,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export XDG_CONFIG_HOME="$HOME/.config"
 
 export EDITOR='vim'
 
