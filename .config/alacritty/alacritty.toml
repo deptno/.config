@@ -20,7 +20,7 @@ family = "SFMono Nerd Font"
 style = "Light"
 
 [window]
-opacity = 0.9
+opacity = 0.8
 
 [scrolling]
 history = 50000
