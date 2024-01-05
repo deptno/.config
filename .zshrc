@@ -216,3 +216,7 @@ function review() {
 if [ -e ~/.zshrc.zigbang ]; then
   source ~/.zshrc.zigbang
 fi
+
+if [ -e $XDG_CONFIG_HOME/broot/launcher/bash/br ]; then
+  source $XDG_CONFIG_HOME/broot/launcher/bash/br
+fi
