@@ -1,4 +1,6 @@
 export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/data"
+
 if [ -e ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
@@ -133,6 +135,7 @@ alias hl-gh="GREP_COLOR='2;37' grep --color=always -E 'true|$' \
   | GREP_COLOR='1;3;4;33;41' grep --color=always -E 'Revert|$' \
   | GREP_COLOR='1;3;4;30;42' grep --color=always -E 'refs\/bisect\/good|$' \
   | GREP_COLOR='1;3;4;31;43' grep --color=always -E 'refs\/bisect\/bad|$' \
+  | GREP_COLOR='1;34;47' grep --color=always -Ei 'jhgu.dev|$' \
   | GREP_COLOR='1;30;47' grep --color=always -Ei 'deptno|deptno-zb|$'"
 alias gpl="gh pr list \
   --json author,headRefName,baseRefName,comments,number,title,mergeable,createdAt,isDraft,state,reviewDecision,latestReviews \
@@ -220,3 +223,7 @@ fi
 if [ -e $XDG_CONFIG_HOME/broot/launcher/bash/br ]; then
   source $XDG_CONFIG_HOME/broot/launcher/bash/br
 fi
+
+# begin appcenter completion
+. <(appcenter --completion)
+# end appcenter completion
