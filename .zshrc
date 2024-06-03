@@ -254,3 +254,24 @@ eval "$(pyenv init -)"
 # the following to ~/.bashrc:
 
 eval "$(pyenv virtualenv-init -)"
+
+# pipenv shell automatically
+function auto_pipenv_shell {
+    if [ ! -n "${PIPENV_ACTIVE+1}" ]; then
+        if [ -f "Pipfile" ] ; then
+            read "response?Pipfile detected. Do you want to activate the virtual environment? (Y/n): "
+            response=${response:-Y}
+            if [[ "$response" == [yY] ]]; then
+                pipenv shell
+            fi
+        fi
+    fi
+}
+
+function cd {
+    builtin cd "$@"
+    auto_pipenv_shell
+}
+
+# 에러가 있음
+# auto_pipenv_shell
