@@ -27,7 +27,7 @@
   dmb = ! "git for-each-ref | grep 'commit\trefs/heads' | grep -v \"$(git rev-parse @)\" | awk '{print $3}' | sed 's|refs/heads/||' | xargs -I {} sh -c \"git branch --contains {} | grep '* ' > /dev/null && [ $? -eq 0 ] && git branch -d {}\""
   ds =  ! "1=${1:-30}; f() { git diff $(git log --since=\"$1 days ago\" --pretty=format:'%H' | tail -1).. --stat; }; f"
 [diff]
-  external = difft
+  ; external = difft
   colorMoved = default
 [difftool "vscode"]
 	cmd = code --wait --diff $LOCAL $REMOTE
