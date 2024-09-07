@@ -18,6 +18,22 @@ module.exports = {
       browser: "Min",
     },
     {
+      match: /^http:\/\/localhost:8888.*$/,
+      browser: "Min",
+    },
+    { // jupyter notebook
+      match: /^http:\/\/localhost:8889/,
+      browser: "Min",
+    },
+    { // stable-diffusion-web-ui
+      match: /^http:\/\/127.0.0.1:7860/,
+      browser: "Min",
+    },
+    { // comfyui
+      match: /^http:\/\/127.0.0.1:8188/,
+      browser: "Min",
+    },
+    {
       match: /^http:\/\/localhost/,
       browser: "Google Chrome",
     },
