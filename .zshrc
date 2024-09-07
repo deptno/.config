@@ -25,6 +25,9 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
+# brew lib
+export DYLD_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_LIBRARY_PATH"
+
 # bun completions
 [ -s "/Users/deptno/.bun/_bun" ] && source "/Users/deptno/.bun/_bun"
 
@@ -121,7 +124,8 @@ alias k=kubectl
 alias calicoctl="kubectl exec -i -n kube-system calicoctl -- /calicoctl"
 alias m=multipass
 alias tt=neomutt
-alias wol=$XDG_CONFIG_HOME/sh/wol_x5950.sh
+alias wol5600x=$XDG_CONFIG_HOME/sh/wol_x5600.sh
+alias wol5950x=$XDG_CONFIG_HOME/sh/wol_x5950.sh
 alias min="open -a /Applications/Min.app"
 alias ll="exa --long --all --icons --git --time-style=long-iso --color-scale --links --header --sort=mod --reverse --group-directories-first"
 alias lln="exa --long --all --icons --git --time-style=long-iso --color-scale --links --header --reverse --group-directories-first"
