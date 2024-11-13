@@ -35,3 +35,28 @@ vim.api.nvim_create_autocmd("FileType", {
     end)
   end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("peek", {}),
+  pattern = {
+    "markdown",
+    "vimwiki",
+  },
+  callback = function(event)
+    vim.schedule(function()
+      local handler = function()
+        local peek = require("peek")
+
+        if peek.is_open() then
+          peek.close()
+        else
+          peek.open()
+        end
+      end
+
+      vim.keymap.set("n", ";v", handler, {
+        buffer = event.buf,
+      })
+    end)
+  end,
+})
