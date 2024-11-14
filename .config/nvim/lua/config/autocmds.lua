@@ -60,3 +60,14 @@ vim.api.nvim_create_autocmd("FileType", {
     end)
   end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("nospell", {}),
+  pattern = {
+    "markdown",
+    "vimwiki",
+  },
+  callback = function(event)
+    vim.opt.spell = false
+  end,
+})
