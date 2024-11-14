@@ -73,11 +73,5 @@ return {
       ";b",
       "<cmd>execute 'VWB' <Bar> :lopen<CR>",
     },
-    {
-      ";v",
-      function()
-        vim.notify("TODO: preview markdown")
-      end,
-    },
   },
 }
