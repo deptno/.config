@@ -2,6 +2,11 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+-- <esc> <meta> 키 모두가 `^[` 처리되는 문제가 있어 기본 키맵에서 제거
+-- @ref: https://github.com/deptno/public-wiki/blame/078d37b0eea1620f33172fed3b1ea7c2372a2d8b/tmux.md#L59
+vim.keymap.set({ "n", "i", "v" }, "<M-k>", "", { noremap = true, silent = true })
+vim.keymap.set({ "n", "i", "v" }, "<M-k>", "", { noremap = true, silent = true })
+
 local map = vim.keymap.set
 local get_git_root = require("lib/get_git_root")
 
