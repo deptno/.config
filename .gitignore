@@ -1,7 +1,9 @@
 *
 !.gitignore*
 !.gitconfig*
+!.config/
 !.config/alacritty/**/*
+!.config/nvim
 !.config/nvim/**/*
 !.config/lazygit/config.yml
 !.task*
