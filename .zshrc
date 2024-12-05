@@ -21,12 +21,8 @@ setopt EXTENDED_HISTORY
 export GEM_HOME=~/.gem/ruby/2.6.8
 
 export PATH="${PATH}:${HOME}/.krew/bin"
-export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
-
-# brew lib
-export DYLD_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_LIBRARY_PATH"
 
 # bun completions
 [ -s "/Users/deptno/.bun/_bun" ] && source "/Users/deptno/.bun/_bun"
@@ -35,11 +31,6 @@ export DYLD_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_LIBRARY_PATH"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# chruby
-if [[ -d /opt/homebrew/opt/chruby/share/chruby ]]; then
-  source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-  source /opt/homebrew/opt/chruby/share/chruby/auto.sh
-fi
 ## wsl
 if [[ -d /usr/local/share/chruby ]]; then
   source /usr/local/share/chruby/chruby.sh
@@ -57,14 +48,32 @@ if [[ -z $ANDROID_HOME ]]; then
 fi
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # ohmyzsh
 ZSH="${HOME}/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
+
+# osx only
+if [[ $(uname -s) == "Darwin" ]]; then
+  export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+  # brew lib
+  export DYLD_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_LIBRARY_PATH"
+
+  # chruby
+  if [[ -d /opt/homebrew/opt/chruby/share/chruby ]]; then
+    source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+    source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+  fi
+
+  # nvm
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+  # if [[ $(sysctl -n machdep.cpu.brand_string | cut -d ' ' -f1-2) == "Apple M1" ]]; then
+  # fi
+fi
 
 plugins=(
   git
@@ -88,7 +97,6 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /opt/homebrew/bin/terraform terraform
 source <(helm completion zsh)
 
 # bind hstr
@@ -202,14 +210,6 @@ function gpld() {
   | sed 's/[^@]CHANGES_REQUESTED/👎/g' \
   | hl-gh;
 }
-
-if [[ $(uname -s) == "Darwin" ]]; then
-  if [[ $(sysctl -n machdep.cpu.brand_string | cut -d ' ' -f1-2) == "Apple M1" ]]; then
-    # alias for m1
-    # alias brew="arch -arm64 brew"
-    # alias ibrew="arch -x86_64 brew"
-  fi
-fi
 
 function review() {
   # stash current status
