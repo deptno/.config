@@ -71,3 +71,28 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt.spell = false
   end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("custom.trouble.symbol", {}),
+  pattern = {
+    "vimwiki",
+  },
+  callback = function(event)
+    vim.schedule(function()
+      local handler_left = function()
+        vim.cmd([[Trouble lsp_document_symbols toggle win.position=left]])
+      end
+      local handler_top = function()
+        vim.cmd([[Trouble lsp_document_symbols toggle win.position=top]])
+      end
+      vim.keymap.set("n", ";1", handler_left, {
+        buffer = event.buf,
+        desc = "vimwiki symbols",
+      })
+      vim.keymap.set("n", ";2", handler_top, {
+        buffer = event.buf,
+        desc = "vimwiki symbols",
+      })
+    end)
+  end,
+})
