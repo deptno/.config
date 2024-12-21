@@ -56,6 +56,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # osx only
 if [[ $(uname -s) == "Darwin" ]]; then
   export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+  export PATH="$HOME/.local/bin:$PATH"
 
   # brew lib
   export DYLD_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_LIBRARY_PATH"
