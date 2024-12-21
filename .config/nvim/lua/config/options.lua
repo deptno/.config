@@ -37,3 +37,9 @@ vim.o.langmap = table.concat({
   "ㅜn",
   "ㅡm",
 }, ",")
+
+vim.filetype.add({
+  extension = {
+    jsonl = "json",
+  },
+})
