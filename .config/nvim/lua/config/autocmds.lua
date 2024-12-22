@@ -96,3 +96,25 @@ vim.api.nvim_create_autocmd("FileType", {
     end)
   end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("custom.lsp.deno", {}),
+  pattern = {
+    "typescript",
+  },
+  callback = function(event)
+    vim.schedule(function()
+      local nvim_lsp = require("lspconfig")
+      nvim_lsp.denols.setup({
+        on_attach = on_attach,
+        root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
+      })
+
+      nvim_lsp.ts_ls.setup({
+        on_attach = on_attach,
+        root_dir = nvim_lsp.util.root_pattern("package.json"),
+        single_file_support = false,
+      })
+    end)
+  end,
+})
