@@ -74,6 +74,9 @@ if [[ $(uname -s) == "Darwin" ]]; then
 
   # if [[ $(sysctl -n machdep.cpu.brand_string | cut -d ' ' -f1-2) == "Apple M1" ]]; then
   # fi
+  
+  # aseprite cli 추가
+  export PATH=$PATH:/Applications/Aseprite.app/Contents/MacOS
 fi
 
 plugins=(
@@ -276,3 +279,13 @@ function cd {
 
 # 에러가 있음
 # auto_pipenv_shell
+
+# yazi, https://yazi-rs.github.io/docs/quick-start
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
