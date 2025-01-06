@@ -112,15 +112,6 @@ fi
 
 # tpm
 if [[ -z "$TMUX" ]]; then
-  if [[ -d ${XDG_CONFIG_HOME:-$HOME/.config}/nnn/plugins ]]; then
-    plugins=$(ls ${XDG_CONFIG_HOME:-$HOME/.config}/nnn/plugins | wc -l)
-
-    if [[ plugins -eq 0 ]]; then
-      echo "install nnn plugins"
-      curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
-    fi
-  fi
-  
   if [[ ! -d ~/.tmux/plugins/tpm ]]; then
     git clone --depth=1 https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   fi
