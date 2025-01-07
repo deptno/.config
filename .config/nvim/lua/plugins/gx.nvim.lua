@@ -1,6 +1,5 @@
 return {
   "deptno/gx.nvim",
-  dir = "/Users/deptno/workspace/src/github.com/deptno/gx.nvim",
   opts = {},
   keys = {
     {
@@ -13,5 +12,6 @@ return {
       desc = "gx.nvim",
     },
   },
-  dev = true,
+  -- dir = "/Users/deptno/workspace/src/github.com/deptno/gx.nvim",
+  -- dev = false,
 }
