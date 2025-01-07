@@ -1,4 +1,0 @@
-[submodule ".task"]
-	path = .task
-	url = git@github.com:deptno/.task.git
-	branch = master
