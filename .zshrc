@@ -120,11 +120,6 @@ if [[ -z "$TMUX" ]]; then
     curl https://raw.githubusercontent.com/dracula/zsh-syntax-highlighting/master/zsh-syntax-highlighting.sh -sSo ~/.oh-my-zsh/themes/zsh-syntax-highlighting.sh
   fi
   source ~/.oh-my-zsh/themes/zsh-syntax-highlighting.sh
-
-  if [[ ! -z "$SSH_CONNECTION" ]]; then
-    tmux attach -t default || tmux new -s default
-    exit
-  fi
 fi
 
 # alias
