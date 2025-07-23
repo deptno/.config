@@ -80,6 +80,15 @@ if [[ $(uname -s) == "Darwin" ]]; then
   export PATH=$PATH:/Applications/Aseprite.app/Contents/MacOS
 fi
 
+# poetry
+if [ ! -d "$ZSH/custom/plugins/poetry" ]; then
+  mkdir $ZSH/custom/plugins/poetry
+fi
+poetry completions zsh > $ZSH/custom/plugins/poetry/_poetry
+export POETRY_CONFIG_DIR=~/.config/pypoetry
+export POETRY_CACHE_DIR=~/.cache/pypoetry
+export POETRY_DATA_DIR=~/.local/share/pypoetry
+
 plugins=(
   git
   zsh-autosuggestions
@@ -88,7 +97,6 @@ plugins=(
   dotenv
   macos
   ruby
-  z
   urltools
   rust
   node
@@ -97,6 +105,7 @@ plugins=(
   kubectl
   kube-ps1
   kubetail
+  poetry
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -129,6 +138,7 @@ alias calicoctl="kubectl exec -i -n kube-system calicoctl -- /calicoctl"
 alias m=multipass
 alias tt=neomutt
 alias wol5600x=$XDG_CONFIG_HOME/sh/wol_x5600.sh
+alias shutdown5600x=$XDG_CONFIG_HOME/sh/shutdown_x5600.sh
 alias wol5950x=$XDG_CONFIG_HOME/sh/wol_x5950.sh
 alias min="open -a /Applications/Min.app"
 alias ll="exa --long --all --icons --git --time-style=long-iso --color-scale --links --header --sort=mod --reverse --group-directories-first"
@@ -216,17 +226,12 @@ function review() {
   git pull --rebase
 }
 
-# work specific
-if [ -e ~/.zshrc.zigbang ]; then
-  source ~/.zshrc.zigbang
-fi
-
 if [ -e $XDG_CONFIG_HOME/broot/launcher/bash/br ]; then
   source $XDG_CONFIG_HOME/broot/launcher/bash/br
 fi
 
 # begin appcenter completion
-. <(appcenter --completion)
+# . <(appcenter --completion)
 # end appcenter completion
 
 # pyenv
@@ -276,3 +281,12 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/deptno/.lmstudio/bin"
+
+# argo cli
+export ARGO_NAMESPACE=argo
+
+eval "$(atuin init zsh)"
+eval "$(zoxide init zsh)"
