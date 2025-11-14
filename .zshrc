@@ -56,7 +56,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # osx only
 if [[ $(uname -s) == "Darwin" ]]; then
-  export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+  export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH" 
   export PATH="$HOME/.local/bin:$PATH"
 
   # brew lib
@@ -290,3 +290,14 @@ export ARGO_NAMESPACE=argo
 
 eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
+
+#devpod 
+dup() {
+  if [ -z "$1" ]; then
+    echo "Usage: dup <number> [path or options]"
+    return 1
+  fi
+  local num="$1"
+  shift
+  devpod provider set-options kubernetes -o LABELS="app=devpod-${num}" && devpod up "$@"
+}
