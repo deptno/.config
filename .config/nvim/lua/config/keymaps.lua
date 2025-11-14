@@ -65,3 +65,9 @@ end
 map("n", "lz", open_lazygit, { desc = "Lazygit" })
 map("n", "lz,", open_lazygit_commits, { desc = "Lazygit: Commits" })
 map("n", "lz.", open_lazygit_commits_for_current_file, { desc = "Lazygit: Commits for current file" })
+map(
+  "n",
+  "<leader>cx",
+  ":lua vim.lsp.buf_detach_client(0, vim.lsp.get_active_clients()[1].id)<CR>",
+  { desc = "Detach current buffer from lsp" }
+)

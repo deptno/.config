@@ -14,7 +14,7 @@ vim.g.vimwiki_list = {
   },
   {
     name = "private",
-    path = "~/workspace/src/github.com/deptno/wiki",
+    path = "~/workspace/src/github.com/deptno/private-wiki",
     ext = ".md",
     diary_rel_path = "diary",
     diary_index = "index",
@@ -22,7 +22,7 @@ vim.g.vimwiki_list = {
   },
   {
     name = "career",
-    path = "~/workspace/src/github.com/deptno/wiki-career",
+    path = "~/workspace/src/github.com/deptno/career-wiki",
     ext = ".md",
     diary_rel_path = "diary",
     diary_index = "index",
