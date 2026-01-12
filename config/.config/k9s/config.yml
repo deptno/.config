@@ -1,4 +1,5 @@
 k9s:
+  liveViewAutoRefresh: false
   refreshRate: 2
   maxConnRetry: 5
   enableMouse: false
@@ -16,50 +17,28 @@ k9s:
     fullScreenLogs: true
     textWrap: false
     showTime: false
-  currentContext: amd64-admin@amd64
+  currentContext: amd64-deptno@amd64
   currentCluster: amd64
   clusters:
     amd64:
       namespace:
-        active: all
+        active: devpod
         lockFavorites: true
         favorites:
         - all
         - postgresql
-        - traefik
-        - harbor
+        - deptno
+        - ai
         - tubemon-dev
         - tubemon
-        - deptno
+        - stock-dev
+        - stock
+        - devpod
         - home-assistant
-      view:
-        active: dp
-      featureGates:
-        nodeShell: true
-      shellPod:
-        image: busybox:1.35.0
-        command: []
-        args: []
-        namespace: default
-        limits:
-          cpu: 100m
-          memory: 100Mi
-        labels: {}
-      portForwardAddress: localhost
-    pi:
-      namespace:
-        active: all
-        lockFavorites: false
-        favorites:
-        - traefik
-        - metallb-system
-        - all
-        - test
-        - default
       view:
         active: po
       featureGates:
-        nodeShell: false
+        nodeShell: true
       shellPod:
         image: busybox:1.35.0
         command: []
