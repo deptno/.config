@@ -26,7 +26,7 @@ export PATH="${PATH}:${HOME}/.krew/bin"
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 # bun completions
-[ -s "/Users/deptno/.bun/_bun" ] && source "/Users/deptno/.bun/_bun"
+[ -s "${HOME}/.bun/_bun" ] && source "${HOME}/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
@@ -283,7 +283,7 @@ function y() {
 }
 
 # Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/deptno/.lmstudio/bin"
+export PATH="$PATH:${HOME}/.lmstudio/bin"
 
 # argo cli
 export ARGO_NAMESPACE=argo
@@ -291,13 +291,26 @@ export ARGO_NAMESPACE=argo
 eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
 
-#devpod 
 dup() {
-  if [ -z "$1" ]; then
-    echo "Usage: dup <number> [path or options]"
+  if [ -z "$2" ]; then
+    echo "Usage: dup [number] [pod-template] [devpod args...]"
     return 1
   fi
+
   local num="$1"
-  shift
-  devpod provider set-options kubernetes -o LABELS="app=devpod-${num}" && devpod up "$@"
+  local template="$2"
+  shift 2
+
+  local template_path="${HOME}/workspace/src/github.com/deptno/cluster-amd64/template/devpod-${template}.yaml"
+
+  if [ ! -f "$template_path" ]; then
+    echo "Error: pod template not found:"
+    echo "  $template_path"
+    return 1
+  fi
+
+  devpod provider set-options kubernetes \
+    -o LABELS="app=devpod-${num}" \
+    -o POD_MANIFEST_TEMPLATE="$template_path" \
+  && devpod up "$@"
 }
