@@ -22,7 +22,7 @@ k9s:
   clusters:
     amd64:
       namespace:
-        active: devpod
+        active: all
         lockFavorites: true
         favorites:
         - all
