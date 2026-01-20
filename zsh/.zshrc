@@ -192,6 +192,7 @@ alias gpl="gh pr list \
 alias sudo="sudo "
 alias watch="watch "
 alias lz="lazygit"
+alias oc="opencode"
 
 # define function
 function gswb() {
