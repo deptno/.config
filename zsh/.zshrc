@@ -314,3 +314,37 @@ dup() {
     -o POD_MANIFEST_TEMPLATE="$template_path" \
   && devpod up "$@"
 }
+dpac () {
+  if [ -z "$2" ]; then
+    echo "Usage: dpa [number] [command]"
+    return 1
+  fi
+
+  local IDX="$1"
+  shift
+
+  local CMD=("$@")
+
+  if [ -z "$IDX" ] || [ "${#CMD[@]}" -eq 0 ]; then
+    echo "usage: da <index> <command>"
+    echo "example: da 0 nvim"
+    return 1
+  fi
+
+  local POD
+  POD=$(kubectl get pods -n devpod \
+    -l app=devpod-"$IDX" \
+    -o jsonpath='{.items[0].metadata.name}')
+
+  if [ -z "$POD" ]; then
+    echo "no pod found for app=devpod-$IDX"
+    return 1
+  fi
+
+  kubectl exec -it -n devpod "$POD" -c codex -- "${CMD[@]}"
+}
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/deptno/.lmstudio/bin"
+# End of LM Studio CLI section
+
